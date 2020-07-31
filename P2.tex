@@ -172,10 +172,11 @@ definições que apresentamos:
   \end{exercicio}
   \begin{proof}[Solução]\hfill
     \begin{enumerate}[(i)]
-      \item  Seja \(C\subseteq T\) uma cadeia e suponha que existe
-        \(\varnothing\not = S\subseteq C\) tal que \(S\) não possui um menor
-        elemento. Neste caso, para cada \(y\in S\), existe \(x\in S\) tal que \(y <x\).
-      \item Por definição, um ramo é bem-ordenado e maximal...
+      \item  Seja \(C\subseteq T\) uma cadeia e seja
+        \(\varnothing\not = S\subseteq C\) vamos provar que \(S\) possui um menor
+        elemento. Com efeito, para cada \(y\in S\), existe \(x\in S\) tal que \(y >x\), logo fixado $y_0\in S$ qualquer o conjunto $A_{y_0} =\{z\in S: z<y_{0}\}$ é não vazio e portanto admite um menor elemento, pois está contido em $\{z\in T: z<y\}$ que é bem ordenado por definição. Seja $m$ o menor elemento de $A_{y_0}$, vou provar que $m$ é o menor elemento de $S$, de fato, se $y\in S$ então ou $y\geq y_0$ ou $y<y_0$, pois $S\subset C$ que é uma cadeia.
+        Portanto se $y\geq y_0$ então $m<y_0\leq y$, e por outro lado se $y<y_0$ então $y\in A_{y_0}$ e assim $m\leq y$. De toda forma $m\leq y$ e por fim $m$ é o menor elemento de $S$.
+      \item Se $y\notin b$ então tomando $a\doteq\{z\in T: z<x\}\cup b\supsetneq b$, pois $y\in a$, e como $a$ é uma cadeia temos um absurdo (pois $a$ contém propriamente $b$, que é maximal).
       \item Suponha que \(y\not\in b\). Vamos mostrar que \(y\) é comparável
         a todos os elementos de \(b\). Se \(z\in b\) e \(z < x\), temos que
         \(y\) e \(z\) são comparáveis pois ambos pertencem ao conjunto \(\{w\in
@@ -183,7 +184,9 @@ definições que apresentamos:
         ordenado. Caso \(x<z\), obtemos que \(y<z\) por transitividade. Assim,
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
-      \item
+      \item Como observamos antes, temos que para
+todo ramo \(b\) de \(T\), \(\ell (b)\leq h(T)\). 
+Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de fato como $\alpha\geq \ell (b)$ então pelo item anterior temos que $b\cap T_\alpha=\varnothing$ para todo $b$ ramo de $T$, logo $T_\alpha=\varnothing$, pois para todo $x\in T$ basta tomar $b_x$ um ramo contendo $x$ e teremos que $x\notin T_\alpha$. Isso implica por fim que $h(T)\leq \alpha$, pois $h(T)$ é o menor ordinal que satisfaz: $$T_\beta =\varnothing$$  
         \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
           distintos tal que \(x\) e \(y\) são comparáveis.
           Suponha sem perda de generalidade que
