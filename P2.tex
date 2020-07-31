@@ -282,7 +282,32 @@ definições que apresentamos:
   
   
   Então podemos considerar o seguinte problema: Se $T$ é uma árvore de altura $\omega_1$, onde cada nível é contável, é verdade que $T$ tem um ramo de comprimento $\omega_1$? NÃO!
+\begin{definition}
+  Uma árvore de altura $\omega_1$ é chamada de uma \textit{árvore de Aronszajn} se todos os os seus níveis são no máximo contáveis e se não possui ramos de comprimento $\omega_1$.
+\end{definition}
+  
+\begin{theorem}
+  Existem árvores de Aronszajn de altura $\omega_1$.
+\end{theorem}
 
+\begin{proof}
+  Construímos os níveis $T_{\alphah}$, $\alpha < \omega_1$ de uma árvore de Aronszajn por recursão transfinita de tal modo que
+  
+  \begin{enumerate}
+      \item $T_{\alpha} \subseteq \omega^{\alpha}$; $\left|T_{\alpha}\right| \le \aleph_0$;
+      \item Se $f \in T_{\alpha}$, então $f$ é um-pra-um e $(\omega - ranf)$ é infinito;
+      \item Se $f \in T_{\alpha}$ e $\beta < \alpha$ então $f |_{\beta} \in T_{\beta}$;
+      \item Para qualquer $\beta < \alpha$, qualquer $g \in T_{\beta}$, e qualquer $X \subseteq \omega - rang$ finito, existe uma $f \in T_{\alpha}$ tall que $f \supseteq g$ e $ranf \cap X = \emptyset$.
+  \end{enumerate}
+  Vamos assumir que isso foi feito, e vamos mostrar que $T = \bigcup_{\alpha < \omega_1}T_{\alpha}$ é uma árvore de Aronszajn. Claramente $T$ é uma árvore por $(3)$, cada nível é no máximo contável por $(1)$, e sua altura é $\omega_1$ (por $(4)$, cada $T_{\alpha} \neq \emptyset$). Se $B$ fosse um ramo de comprimento $\omega_1$ em $T$, então $F = \bigcup B$ seria uma função um-pra-um de $\omega_1$ para $\omega$ (por $(2)$), uma contradição.
+  
+  Falta construir $T_{\alpha}$ para $\alpha$ limite. Para qualquer $g \in T_{\beta}$, $\beta < \alpha$, e qualquer $X \subseteq \omega - rang$ finito, construímos uma $f = f(g, X)$ recursivamente da seguinte maneira. Fixe uma sequência crescente $\langle \alpha_n \rangle_{n=0}^{\infty}$ tal que $\alpha_0 = \beta$ e $sup\{\alpha_n | n \in \mathbb{N}\} = \alpha$. Seja $f_0 = g \in T_{\alpha_0}$ e $X_0 = X \subseteq \omega - ranf_0$. Tendo definido $f_n \in T_{\alpha_n}$ e $X_n = X \subseteq \omega - ranf_n$ finitos, nós primeiro tomamos um $X_{n+1} \supset X_n$ finito, $X_{n+1} = X \subseteq \omega - ranf_n$ (isto é possível porque o último conjunto é infinito, por $(2)$) e então selecionamos algumas $f_{n+1} \in T_{\alpha_{n+1}}$ tais que $f_{n+1} \supseteq f_n$ e $X_{n+1} \cap ranf_{n+1} = \emptyset$ (possível por $(4)$). Seja $f = \bigcup_{n = 0}^{\infty}f_n$. Claramente $f: \alpha \rightarrow \omega$, $f$ é um-pra-um (pois todas as $f_n$ são), $ranf \cap (\bigcup_{n = 0}^{\infty} X_n) = \emptyset$, portanto $\omega - ranf$ é infinito, e $ranf \cap X = \emptyset$. Então $f$ satisfaz $(2)$. Para $\beta < \alpha$, $f |_{\beta} = f_{n} |_{\beta}$ quando $\beta < \alpha_n$, e portanto $(3)$ também é satisfeito.
+  
+  Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\apha}$ é no máximo contável, e $(1)$ também é satisfeito.
+\end{proof}
+
+Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis tem cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existencia de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
+  
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
