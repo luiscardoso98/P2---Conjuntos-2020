@@ -1,6 +1,31 @@
  \documentclass[a4paper]{article}
 \usepackage{packages}
 \usepackage{cite}
+\usepackage{hyperref}
+\hypersetup{
+    pdftoolbar=true,
+    pdfmenubar=true,
+    pdffitwindow=false,
+    pdfstartview={FitH},
+    pdftitle={TITOLO },
+    pdfauthor={AUTORI},
+    pdfsubject={ARGOMENTO},
+    pdfkeywords={},
+    pdfnewwindow=true,
+    colorlinks=true, %set this false for printable version
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+}
+
+\theoremstyle{plain}\newtheorem{teo}{Teorema}[section]
+\theoremstyle{plain}\newtheorem{prop}[teo]{Proposição}
+\theoremstyle{plain}\newtheorem{lem}[teo]{Lema}
+\theoremstyle{plain}\newtheorem{cor}[teo]{Corolário}
+\theoremstyle{definition}\newtheorem{defi}[teo]{Definição}
+\theoremstyle{remark}\newtheorem{rem}[teo]{Observação}
+\theoremstyle{definition}\newtheorem{example}[teo]{Exemplo}
+\theoremstyle{remark}\newtheorem{step}{\bf Step}
 \title{Introdução à Teoria dos Conjuntos - Prova 2}
 \author{Ariel Serranoni Soares da Silva  - Número USP: 7658024\\
 Pedro Felizatto - Número USP:9794531\\
