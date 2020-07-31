@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+ \documentclass[a4paper]{article}
 \usepackage{packages}
 \usepackage{cite}
 \title{Introdução à Teoria dos Conjuntos - Prova 2}
@@ -28,7 +28,7 @@ passos que ficaram em segundo plano na abordagem do livro.
 Os elementos de \(T\) são chamados de \emph{nós}. Em particular,
 o menor elemento de \(T\) é chamado  de \emph{raíz}.
 Se \(x,y\in T\) são nós tais que  \(y<x\), dizemos que \(y\) é um
-\emph{antecessor} de \(x\) e que \(x\) é um \emph{sucessor} de \(y\).
+\emph{antecessor} de \(x\), e que \(x\) é um \emph{sucessor} de \(y\).
 
 Seja \(x\in T\) um nó.  A \emph{altura} \(h(x)\) de \(x\) é o único ordinal
 isomorfo ao conjunto bem ordenado \mbox{\(\{y\in T\,\colon
@@ -63,7 +63,9 @@ que \(x\not = y\), então \(x\not \leq y\) e \(y\not \leq x\).
 
 A respeito dos conceitos introduzidos acima, é importante observar que todo
 ramo e subárvore de \(T\) contém a raiz. Também notamos que se \(x,y\in T\)
-são nós tais que \(y< x\), então \(h(y) <h(x)\). A seguir, vamos resolver os
+são nós tais que \(y< x\), então \(h(y) <h(x)\). Além disso, a prórpia definição
+de \(h(T)\) nos dá que \(T_\alpha\not=\varnothing\) para todo ordinal
+\(\alpha<h(T)\). A seguir, vamos resolver os
 exercícios sugeridos pelo autor neste ponto do texto em \cite{jech},
 que exploram algumas das propriedades que surgem imediatamente das
 definições que apresentamos:
@@ -75,24 +77,22 @@ definições que apresentamos:
     \(T_0\not =\varnothing\);
   \item Se \(\alpha,\beta\) são ordinais tais que \(\alpha\not = \beta\), então \(T_\alpha\cap T_\beta =\varnothing\);
   \item \(T=T^{(h(T))}=\bigcup_{\alpha < h(T)}T_\alpha\);
-  \item \(x\in T\) é um nó sucessor se, e somente se existe um único \(y\in T\) tal que
+  \item Um nó \(x\in T\) é um nó sucessor se, e somente se existe um único nó \(y\in T\) tal que
     \begin{equation}\label{propsuc}
       y < x \text{ e não existe } z \text{ tal que } y<z<x.
     \end{equation}
     Se \(x\) é um nó sucessor então o nó
-    \(y\) que satisfaz \ref{propsuc}  é chamado de \emph{antecessor imediato} de
+    \(y\) que satisfaz \eqref{propsuc}  é chamado de \emph{antecessor imediato} de
     \(x\), e dizemos que \(x\) é \emph{sucessor imediato} de \(y\).
     Note que cada nó sucessor possui um único antecessor imediato,
     mas pode possuir múltiplos sucessores imediatos;
-    \item Se \(y< x\) então existe um único \(z\in T\) tal que \(y< z\leq x\) e
+    \item Se \(x,y\in T\) são nós tais que \(y< x\), então existe um único \(z\in T\) tal que \(y< z\leq x\) e
       \(z\) é um sucessor imediato de \(y\);
     \item \(h(T)=\sup\{\alpha +1\,\colon
       T_\alpha\not=\varnothing\}=\sup\{h(x)+1\,\colon x\in T\}.\)
-  \end{enumerate}
-
-\end{exercicio}
-\textcolor{red}{Ariel S. : Falta provar a volta do item (iv)! As outras que
-  estão faltando acho que sei fazer.}
+    \end{enumerate}
+  \end{exercicio}
+  
 \begin{proof}[Solução]\hfill
   \begin{enumerate}[(i)]
   \item Por definição, \(T\) possui um menor
@@ -101,20 +101,19 @@ definições que apresentamos:
     distintas. Neste caso,  para todo \(x\in T\) temos que
     \(r_1\leq x\). Em particular temos que
     \(r_1\leq r_2\). Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
-    uma ordem, segue que \(r_1=r_2\), contradição. Finalmente, notando que
+    uma ordem, segue que \(r_1=r_2\), contradição. Finalmente notamos que,
     como \(r\) é o menor elemento de \(T\), segue que \(\{x\in T\,\colon
-    x<r\}=\varnothing\), o que implica que \(h(r)=0\). Assim concluímos que
-    \(r\in T_0\) e logo \(T_0\not=\varnothing\).
+    x<r\}=\varnothing\). Como último fato implica que \(h(r)=0\), concluímos que
+    \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
     \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
   \item Para a primeira igualdade, note que \(T^{(h(T))}\subseteq T\) uma vez
     que \(T^{(h(T))}\) é definido como uma união de subconjuntos de \(T\). Por
     outro lado, seja \(x\in T\) e suponha que \(x\not\in T^{(h(T))}\). Daí,
     segue que não existe \(\alpha < h(T)\) tal que \(h(x)=\alpha\). Isso implica
-    que \(h(x)\geq h(T)\), absurdo.
-
-    Já a segunda igualdade segue diretamente da definição de \(T^{(h(T))}\). 
-
+    que \(h(x)\geq h(T)\), absurdo pois \(T_\beta=\varnothing\) para todo
+    ordinal \(\beta \geq h(T)\). Como a segunda igualdade segue diretamente da
+    definição de \(T^{(h(T))}\), a prova está completa. 
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
     \(T_\alpha\) é não vazio. Assumindo o contrário, teremos que
@@ -122,14 +121,31 @@ definições que apresentamos:
     se  existe \(z\) tal que \(y<z<x\), então
     \[h(y)=\alpha<h(z)<S(\alpha)=h(x),\] absurdo. Finalmente, suponha que
     existem \(y_1\)
-    e \(y_2\) tais que \(h(y_1)=h(y_2)=\alpha\), neste caso o conjunto \(S=\{w\in
+    e \(y_2\) distintos tais que \(h(y_1)=h(y_2)=\alpha\), neste caso o conjunto \(S=\{w\in
     T\,\colon w <x\}\) não é bem ordenado pois o subconjunto
     \(\{y_1,y_2\}\not = \varnothing\) de \(S\) não possui um menor elemento.
-  \item Seja \(\alpha=h(x)\) e considere a subárvore \(T^{(\alpha)}\) de \(T\).
+    Para a volta, basta mostrar que se existe \(y\) satisfazendo
+    \eqref{propsuc}, então \(h(x)=S(h(y))\).
+  \item Em primeiro lugar, suponha por absurdo que não existe tal elemento
+    \(z\). Seja \(\alpha=h(x)\) e considere a subárvore \(T^{(\alpha)}\) de \(T\).
     Seja \(b=\{w \in T \,\colon w<x\}\) e recorde que \(b\) ramo de
-    \(T^{(\alpha)}\) por definição.... 
-  \item 
-  \end{enumerate}
+    \(T^{(\alpha)}\). Note que \(y\in b\) e que \(b\) tem comprimento \(\alpha\). Se
+    não existe \(z\), então \(b\) não é maximal.
+  \item Primeiramente, lembramos que por definição, \(h(T)\) é o menor ordinal
+    \(\alpha\) tal que \(T_\alpha=\varnothing\). Sendo assim, podemos ver que
+    \[h(T)\geq \alpha +1 \text{ para cada } \alpha \text{ tal que }
+      T_\alpha\not=\varnothing,\]
+    e que
+    \[h(T)\geq h(x)+1\,\colon x\in T.\]
+    Daí segue que
+    \[h(T)\geq \sup\{\alpha+1\,\colon T_\alpha\not=\varnothing\}\text{ e que }
+      h(T)\geq\sup\{h(x)+1\,\colon x\in T\}.\]
+    Por fim, suponha que
+    \[h(T)> \sup\{\alpha+1\,\colon T_\alpha\not=\varnothing\}\text{ ou } h(T)
+      >\sup\{h(x)+1\,\colon x\in T\}.\]
+    Em ambos os casos, segue que \(T_\beta=\varnothing\) para algum \(\beta<
+    h(T)\). Absurdo.\qedhere
+\end{enumerate}
 \end{proof}
 \begin{exercicio}
     Mostre que:
@@ -146,12 +162,22 @@ definições que apresentamos:
   \begin{proof}[Solução]\hfill
     \begin{enumerate}[(i)]
       \item  Seja \(C\subseteq T\) uma cadeia e suponha que existe
-        \(\varnothing\not = S\subseteq
-        C\) tal que \(S\) não possui um menor elemento. Neste caso, para cada
-        \(y\in S\), existe \(x\in S\) tal que \(y <x\).
-      \item um ramo é bem-ordenado e maximal...
+        \(\varnothing\not = S\subseteq C\) tal que \(S\) não possui um menor
+        elemento. Neste caso, para cada \(y\in S\), existe \(x\in S\) tal que \(y <x\).
+      \item Por definição, um ramo é bem-ordenado e maximal...
+      \item Suponha que \(y\not\in b\). Vamos mostrar que \(y\) é comparável
+        a todos os elementos de \(b\). Se \(z\in b\) e \(z < x\), temos que
+        \(y\) e \(z\) são comparáveis pois ambos pertencem ao conjunto \(\{w\in
+        T\,\colon w< x \}\), que é bem ordenado, e em particular, linearmente
+        ordenado. Caso \(x<z\), obtemos que \(y<z\) por transitividade. Assim,
+        concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
+        maximal. Absurdo.
       \item
-    \end{enumerate}
+        \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
+          distintos tal que \(x\) e \(y\) são comparáveis.
+          Suponha sem perda de generalidade que
+      \(x<y\). Neste caso, temos que \(x<y\) mas \(h(x)=h(y)\), absurdo.\qedhere
+  \end{enumerate}
   \end{proof}
 
   Agora vamos olhar para alguns exemplos de árvores:
@@ -164,11 +190,15 @@ definições que apresentamos:
     \item Seja \(\lambda\) um número ordinal e seja \(A\) um conjunto não-vazio.
       Defina \(A^{< \lambda}=\bigcup_{\alpha < \lambda} A^\alpha\) como o
       conjunto de todas as sequências transfinitas de elementos de \(A\) com
-      comprimento menor que \(\lambda\). Considere \(T=A^{< \lambda}\) e o ordene
-      segundo \(\subseteq\), de modo para \(f,g\in T\), temos \(f\leq g\) se, e
-      somente se \(f\subseteq g\). Isto é \(f=\rest{g}{\dom(f)}\).
+      comprimento menor que \(\lambda\). Considere \(T=A^{< \lambda}\) e o
+      ordene segundo \(\subseteq\), de modo para \(f,g\in T\), temos \(f\leq g\)
+      se, e somente se \(f\subseteq g\). Isto é \(f=\rest{g}{\dom(f)}\).
+    \item
+    \item 
+    \item 
     \end{enumerate}
   \end{exemplo}
+
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
