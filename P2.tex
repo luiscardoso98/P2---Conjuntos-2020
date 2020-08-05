@@ -1,13 +1,5 @@
 \documentclass[a4paper]{article}
 \usepackage{packages}
-\theoremstyle{plain}\newtheorem{teo}{Teorema}[section]
-\theoremstyle{plain}\newtheorem{prop}[teo]{Proposição}
-\theoremstyle{plain}\newtheorem{lem}[teo]{Lema}
-\theoremstyle{plain}\newtheorem{cor}[teo]{Corolário}
-\theoremstyle{definition}\newtheorem{defi}[teo]{Definição}
-\theoremstyle{remark}\newtheorem{rem}[teo]{Observação}
-\theoremstyle{definition}\newtheorem{example}[teo]{Exemplo}
-\theoremstyle{remark}\newtheorem{step}{\bf Step}
 \title{Introdução à Teoria dos Conjuntos - Prova 2}
 \author{Ariel Serranoni Soares da Silva  - Número USP: 7658024\\
 Pedro Felizatto - Número USP:9794531\\
@@ -28,9 +20,11 @@ passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 
 \setcounter{section}{2}
 \section{Árvores}
-\subsection*{Introdução}
-Como partições, o estudo de árvores originou-se na teoria de combinatória finita,
-mas também é de interesse da teoria dos conjuntos estudá-las.
+
+Assim como fizemos anteriormente com partições, vamos agora dedicar uma seção do
+nosso trabalho para generalizar mais um objeto originário do
+contexto de combinatória finita: Árvores.
+
 \begin{definition}
   Uma \emph{árvore} é um conjunto ordenado \((T,\leq)\) tal que:
  \begin{enumerate}[(i)]
@@ -42,7 +36,7 @@ mas também é de interesse da teoria dos conjuntos estudá-las.
 Os elementos de \(T\) são chamados de \emph{nós}. Em particular,
 o menor elemento de \(T\) é chamado  de \emph{raiz}.
 Se \(x,y\in T\) são nós tais que  \(y<x\), dizemos que \(y\) é um
-\emph{antecessor} de \(x\), e que \(x\) é um \emph{sucessor} de \(y\).
+\emph{antecessor} de \(x\) e que \(x\) é um \emph{sucessor} de \(y\).
 
 Seja \(x\in T\) um nó.  A \emph{altura} \(h(x)\) de \(x\) é o único ordinal
 isomorfo ao conjunto bem ordenado \mbox{\(\{y\in T\,\colon
@@ -76,7 +70,7 @@ quaisquer elementos de \(A\) são incomparáveis. Isto é, se \(x,y\in A\) são 
 que \(x\not = y\), então \(x\not \leq y\) e \(y\not \leq x\).
 
 A respeito dos conceitos introduzidos acima, é importante observar que todo
-ramo e subárvore de \(T\) contém a raiz. Também notamos que se \(x,y\in T\)
+ramo ou subárvore de \(T\) contém a raiz. Também notamos que se \(x,y\in T\)
 são nós tais que \(y< x\), então \(h(y) <h(x)\). Além disso, a prórpia definição
 de \(h(T)\) nos dá que \(T_\alpha\not=\varnothing\) para todo ordinal
 \(\alpha<h(T)\). A seguir, vamos resolver os
@@ -109,6 +103,7 @@ definições que apresentamos:
   
 \begin{proof}[Solução]\hfill
   \begin{enumerate}[(i)]
+
   \item Por definição, \(T\) possui um menor
     elemento, o que implica que \(T\) possui uma raiz \(r\). Para verificar a
     unicidade de \(r\), suponha que \(T\) possui duas raízes \(r_1\) e \(r_2\)
@@ -119,15 +114,18 @@ definições que apresentamos:
     como \(r\) é o menor elemento de \(T\), segue que \(\{x\in T\,\colon
     x<r\}=\varnothing\). Como este último fato implica que \(h(r)=0\), concluímos que
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
+
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
     \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
+
   \item Para a primeira igualdade, note que \(T^{(h(T))}\subseteq T\) uma vez
     que \(T^{(h(T))}\) é definido como uma união de subconjuntos de \(T\). Por
     outro lado, seja \(x\in T\) e suponha que \(x\not\in T^{(h(T))}\). Daí,
-    segue que não existe \(\alpha < h(T)\) tal que \(h(x)=\alpha\). Isso implica
-    que \(h(x)\geq h(T)\), absurdo pois \(T_\beta=\varnothing\) para todo
-    ordinal \(\beta \geq h(T)\). Como a segunda igualdade segue diretamente da
+    segue da definição de \(T^{(h(T))}\) que não existe \(\alpha < h(T)\) tal
+    que \(h(x)=\alpha\). Isso implica
+    que \(h(x)\geq h(T)\). Absurdo. Como a segunda igualdade segue diretamente da
     definição de \(T^{(h(T))}\), a prova está completa. 
+
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
     \(T_\alpha\) é não vazio. Assumindo o contrário, teremos que
@@ -138,27 +136,31 @@ definições que apresentamos:
     e \(y_2\) distintos satisfazendo \eqref{propsuc}. Neste caso, o conjunto \(S=\{w\in
     T\,\colon w <x\}\) não é bem ordenado pois o subconjunto
     \(\{y_1,y_2\}\not = \varnothing\) de \(S\) não possui um menor elemento.
-    Para a volta, basta notar que se existe \(y\) satisfazendo
+
+    Para verificar a implicação reversa, observamos que se existe \(y\) satisfazendo
     \eqref{propsuc}, então \(h(x)=S(h(y))\). Do contrário, existe \(z\in T\) tal
     que \(h(y)<h(z)<h(x)\), implicando que \(y<z<x\). Absurdo.
+
   \item Em primeiro lugar, suponha por absurdo que não existe tal elemento
     \(z\). Seja \(\alpha=h(x)\) e considere a subárvore \(T^{(\alpha)}\) de \(T\).
-    Seja \(b=\{w \in T \,\colon w<x\}\) e recorde que \(b\) ramo de
+    Seja \(b=\{w \in T \,\colon w<x\}\) e recorde que \(b\) é um ramo de
     \(T^{(\alpha)}\). Note que \(y\in b\) e que \(b\) tem comprimento \(\alpha\). Se
-    não existe \(z\), então \(b\) não é maximal.
-  \item Primeiramente, lembramos que por definição, \(h(T)\) é o menor ordinal
+    não existe \(z\), então \(b\) não é maximal. \textcolor{red}{Ariel S: Quase
+      certeza que esse item não tá certo! Alguém sabe arrumar?}
+
+  \item  Por definição, \(h(T)\) é o menor ordinal
     \(\alpha\) tal que \(T_\alpha=\varnothing\). Sendo assim, podemos ver que
     \[h(T)\geq \alpha +1 \text{ para cada } \alpha \text{ tal que }
       T_\alpha\not=\varnothing,\]
     e que
-    \[h(T)\geq h(x)+1\,\colon x\in T.\]
+    \[h(T)\geq h(x)+1\text{ para cada } x\in T.\]
     Daí segue que
     \[h(T)\geq \sup\{\alpha+1\,\colon T_\alpha\not=\varnothing\}\text{ e que }
       h(T)\geq\sup\{h(x)+1\,\colon x\in T\}.\]
     Por fim, suponha que
     \[h(T)> \sup\{\alpha+1\,\colon T_\alpha\not=\varnothing\}\text{ ou } h(T)
-      >\sup\{h(x)+1\,\colon x\in T\}.\]
-    Em ambos os casos, segue que \(T_\beta=\varnothing\) para algum \(\beta<
+      >\sup\{h(x)+1\,\colon x\in T\}\]
+    e note que em ambos os casos, segue que \(T_\beta=\varnothing\) para algum \(\beta<
     h(T)\). Absurdo.\qedhere
 \end{enumerate}
 \end{proof}
@@ -177,25 +179,57 @@ definições que apresentamos:
   \begin{proof}[Solução]\hfill
     \begin{enumerate}[(i)]
       \item  Seja \(C\subseteq T\) uma cadeia e seja
-        \(\varnothing\not = S\subseteq C\) vamos provar que \(S\) possui um menor
-        elemento. Com efeito, para cada \(y\in S\), existe \(x\in S\) tal que \(y >x\), logo fixado $y_0\in S$ qualquer o conjunto $A_{y_0} =\{z\in S: z<y_{0}\}$ é não vazio e portanto admite um menor elemento, pois está contido em $\{z\in T: z<y\}$ que é bem ordenado por definição. Seja $m$ o menor elemento de $A_{y_0}$, vou provar que $m$ é o menor elemento de $S$, de fato, se $y\in S$ então ou $y\geq y_0$ ou $y<y_0$, pois $S\subset C$ que é uma cadeia.
-        Portanto se $y\geq y_0$ então $m<y_0\leq y$, e por outro lado se $y<y_0$ então $y\in A_{y_0}$ e assim $m\leq y$. De toda forma $m\leq y$ e por fim $m$ é o menor elemento de $S$.
-      \item Se $y\notin b$ então tomando $a\doteq\{z\in T: z<x\}\cup b\supsetneq b$, pois $y\in a$, e como $a$ é uma cadeia temos um absurdo (pois $a$ contém propriamente $b$, que é maximal).
-      \item Suponha que \(y\not\in b\). Vamos mostrar que \(y\) é comparável
+        \(\varnothing\not = S\subseteq C\). Vamos provar que \(S\) possui um menor
+        elemento.
+
+        Seja \(y\in S\). Se \(y\) é o menor elemento de \(S\) então a prova está
+        completa. Caso contrário, temos que existe \(x\in S\) tal que \(x<y\). Assim,
+         o conjunto \(S_{y} =\{z\in S\,\colon z<y\}\) é não vazio. Além disso, como
+         \(S_y\) está contido em \(\{z\in T\,\colon z<y\}\), que é bem ordenado por
+         definição, obtemos que \(S_y\) possui um menor elemento \(m\).
+
+         Por fim, vamos mostrar que \(m\) é o menor elemento de \(S\). De fato, se
+         \(s\in S\) então ou \(y \leq s\) ou \(s<y\), pois \(S\subseteq C\), que é uma cadeia.
+         Se \(y \leq s\) então \(m<y\leq s\). Por outro lado se
+         \(s<y\) então \(s\in S_{y}\), e assim \(m\leq s\). De toda forma, temos que
+         \(m\leq s\). Logo,  \(m\) é o menor elemento de \(S\).
+
+       \item Suponha que \(y\not\in b\). Vamos mostrar que \(y\) é comparável
         a todos os elementos de \(b\). Se \(z\in b\) e \(z < x\), temos que
         \(y\) e \(z\) são comparáveis pois ambos pertencem ao conjunto \(\{w\in
         T\,\colon w< x \}\), que é bem ordenado, e em particular, linearmente
         ordenado. Caso \(x<z\), obtemos que \(y<z\) por transitividade. Assim,
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
-      \item Como observamos antes, temos que para
-todo ramo \(b\) de \(T\), \(\ell (b)\leq h(T)\). 
-Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de fato como $\alpha\geq \ell (b)$ então pelo item anterior temos que $b\cap T_\alpha=\varnothing$ para todo $b$ ramo de $T$, logo $T_\alpha=\varnothing$, pois para todo $x\in T$ basta tomar $b_x$ um ramo contendo $x$ e teremos que $x\notin T_\alpha$. Isso implica por fim que $h(T)\leq \alpha$, pois $h(T)$ é o menor ordinal que satisfaz: $$T_\beta =\varnothing$$  
-        \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
+
+        \item \textcolor{red}{Ariel S: Aqui o item (ii) estava duplicado e está
+            faltando o (iii) !!!}
+        
+      \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
+        todo ramo \(b\) de \(T\). Este fato nos permite concluir que
+        \[h(T)\geq\sup\{\ell(b)\,\colon b \text{é um ramo de} T\}\].
+        Assim nos resta verificar que \(h(T)\) é de fato o menor dos majorantes
+         de \(\{\ell(b)\,\colon b \text{é um ramo de} T\}\). Isto é, vamos
+         provar que se \(\alpha\geq  \ell (b)\)
+        para todo ramo \(b\) de \(T\), então \(\alpha\geq h(T)\).
+
+        De fato, como \(\alpha\geq \ell (b)\) para todo ramo \(b\) de \(T\),
+         segue do item anterior que \(b\cap T_\alpha=\varnothing\)  para
+         todo \(b\)  ramo de \(T\).
+
+         Como para todo nó \(x\in T\) existe um ramo \(b_x\) tal que
+         \(x\in b_x\) e \(T_\alpha\cap b= \varnothing\) para todo ramo
+         \(b\subseteq T\), concluímos que \(T_\alpha=\varnothing\).
+         Este último fato implica que \(h(T)\leq \alpha\), pois \(h(T)\) é o
+         menor ordinal \(\beta\) que satisfaz \(T_\beta =\varnothing\).  
+
+      \item Seja \(\alpha < h(T)\) e assuma que existem \(x,y\in T_\alpha\)
           distintos tal que \(x\) e \(y\) são comparáveis.
           Suponha sem perda de generalidade que
-      \(x<y\). Neste caso, temos que \(x<y\) mas \(h(x)=h(y)\), absurdo.\qedhere
-  \end{enumerate}
+          \(x<y\). Neste caso, temos que \(x<y\) mas \(h(x)=h(y)\). Absurdo, pois
+          \(x<y\) implica que \(h(x) < h(y)\).\qedhere
+
+    \end{enumerate}
   \end{proof}
 
   Agora vamos olhar para alguns exemplos de árvores:
@@ -209,16 +243,16 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
       Defina \(A^{< \lambda}=\bigcup_{\alpha < \lambda} A^\alpha\) como o
       conjunto de todas as sequências transfinitas de elementos de \(A\) com
       comprimento menor que \(\lambda\). Considere \(T=A^{< \lambda}\) e o
-      ordene segundo \(\subseteq\). Dessa forma, para quaisquer \(f,g\in T\),
-      temos \(f\leq g\) se, e somente se \(f\subseteq g\).
-      Isto é, \(f=\rest{g}{\dom(f)}\). É fácil verificar que \(T\) é uma árvore:
+      ordene segundo \(\subseteq\). Assim, para quaisquer \(f,g\in T\),
+      temos \(f\leq g\) se, e somente se \(f\subseteq g\), o que significa que
+      \(f=\rest{g}{\dom(f)}\). É fácil verificar que \((T,\subseteq)\) é uma árvore:
       Primeiro, note que a sequência vazia é o menor elemento de \(T\). Além
       disso, para cada \(f\in T\), o conjunto \(\{x\in T\,\colon x < f\}\) é
       bem-ordenado pois, para qualquer um de seus subconjuntos, a sequência de
       menor comprimento é o menor elemento.
 
       Também é imediato que para cada \(f\in T\),
-      temos que \(h(f)=\alpha\) se, e somente se \( f\in A_\alpha\). Isto é,
+      temos que \(h(f)=\alpha\) se, e somente se \( f\in A^\alpha\). Isto é,
       \(T_\alpha =A^\alpha\). Ademais, se \(\alpha\) e \(\beta\) são ordinais
       tais que \(\alpha =\beta +1\) e \(f\in A^\alpha\), a sequência
       \(\rest{f}{\beta}\) é o antecessor imediato de
@@ -227,70 +261,83 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
 
       Por fim, observemos que existe uma  correspondência biunívoca entre os
       ramos de \(T\) e as funções de \(\lambda\) em \(A\):
-      se \(F\in A^{< \lambda}\) então \(\{{\rest{F}{\alpha} : \alpha <\lambda}\}\) é
-      um ramo em \(T\). Por outro lado, se \(B\) é um ramo em
-      \(T\) então \(B\) é um sistema compatível de funções
-      e \(F=\bigcup B\in A^\lambda\). Vale notar que todos os ramos de \(T\) são
+      se \(f\in A^\lambda\) então \(\{{\rest{f}{\alpha}\,\colon\alpha <\lambda}\}\) é
+      um ramo em \(T\). Por outro lado, se \(b\) é um ramo em
+      \(T\) então \(b\) é um sistema compatível de funções
+      e \(f=\bigcup_{g\in b} g\in A^\lambda\). Vale notar que todos os ramos de \(T\) são
       cofinais, uma vez que possuem comprimento \(\lambda=h(T)\).
       
     \item Generalizando o exemplo anterior, se
-      \(T\subseteq A^{<\lambda}\) for uma subárvore de 
+      \(T\subseteq A^{<\lambda}\) é uma subárvore de 
       \((A^{<\lambda},\subseteq)\) com altura \(h(T)=\alpha\), então existe uma
       correspondência biunívoca entre os ramos de \(T\) e as funções
-      \(F\in A^{<\lambda}\cup A^\lambda\) satisfazendo cada uma das seguintes
+      \(f\in A^{<\lambda}\cup A^\lambda\) satisfazendo cada uma das seguintes
       propriedades:
       \begin{enumerate}[(i)]
-      \item \(\rest{F}{\alpha}\in T\) para todo \(\alpha \in \dom(F)\);
-      \item \(F\not\in T\) ou \(F\in T\) e \(F\) não possui sucessores em \(T\). 
+      \item \(\rest{f}{\alpha}\in T\) para todo \(\alpha \in \dom(f)\);
+      \item \(f\not\in T\) ou \(f\in T\) e \(f\) não possui sucessores em \(T\). 
       \end{enumerate}
-     Nessa situação, costuma-se
-    identificar ramos com suas funções correspondentes
-  \item Seja \(A=\Naturals \),\(\lambda =\omega\). Consideremos
+     Nessa situação, costuma-se identificar um  ramo utilizando sua função correspondente.
+
+   \item Seja \(A=\Naturals \). Consideremos
     \(T\subseteq \Naturals^{<\omega}\)
-    o conjunto das sequências finitas decrescentes, ou seja, \(f\in T \iff f(i)>f(j)\) 
-    para todo \(i<j<\dom(f)\in\Naturals\), então \(T\) é uma subárvore de \((\Naturals^{<\omega},\subseteq)\).
-    T é uma árvore de altura \(\omega\) que não possui ramos cofinais (veja Exercício 2.8,
-    Capítulo 3).
-    \item Seja \((\Reals,\leq)\). Uma \emph{representação} de uma árvore \((T,\preceq)\)
-    \emph{por intervalos} em \((\Reals,\leq)\) é uma função 1-a-1 \(\Phi\) que para cada 
-    \(x\in T\), \(\Phi (x)\) é um intervalo em \((\Reals,\leq)\) de modo que para todo \(x,y\in T\):
+    o conjunto das sequências de números naturais que são finitas e
+    decrescentes, ou seja, \(f\in T \) se, e somente se  \(f(i)>f(j)\)  para todo
+    \(i<j<\dom(f)\in\Naturals\).  Então \((T,\subseteq)\) é uma subárvore de
+    \((\Naturals^{<\omega},\subseteq)\). Note que a altura de  \(T\) é 
+    \(\omega\). Além disso, temos pelo Exercício 2.8 do Capítulo 3 que não
+    existe uma sequência de números naturais que seja infinita e decrescente.
+    Assim conseguimos concluir que todos os ramos de \(T\) são finitos, o
+    que implica que \(T\) não possui ramos cofinais.
+
+  \item Seja \((R,\leq)\) um conjunto linearmente ordenado.
+    Uma \emph{representação} de uma árvore \((T,\preceq)\)
+    \emph{por intervalos} em \((R,\leq)\) é uma função \(\Phi\) tal que para
+    quaisquer \(x,y\in T\),
+    suas imagens \(\Phi(x)\) e \(\Phi(y)\) são intervalos em \((R,\leq)\) satisfazendo:
     \begin{enumerate}[(i)]
-    \item \(x\preceq y\iff \Phi(x)\supseteq\Phi(y)\); 
-    \item \(x\) e \(y\) são incomparáveis \(\iff\) \(\Phi(x)\cap\Phi(y) =\emptyset\)
+    \item \(x\preceq y\) se, e somente se \(\Phi(x)\supseteq\Phi(y)\); 
+    \item \(x\) e \(y\) são incomparáveis se, e somente se \(\Phi(x)\cap\Phi(y) =\varnothing\).
     \end{enumerate}
-    Isso implica, em particular, que \((\Phi[T],\supseteq)\) é uma árvore isomorfa à
-    \((T,\preceq)\). Por exemplo, o sistema \(\langle D_s \| s\in S\rangle\) cosntruído
-    no Exemplo 3.18, Capítulo 10, é uma representação da árvore \(S=Seq(\{0,1\})=\{0,1\}^{<\omega}\)
-    (ordenado por \(\subseteq\) por intervalos fechados na reta real).
+    Em particular, as propriedades acima implicam que \((\Phi[T],\supseteq)\) é
+    uma árvore isomorfa a \((T,\preceq)\). Por exemplo, se considerarmos
+    a árvore \(S=Seq(\{0,1\})=\{0,1\}^{<\omega}\) ordenado por \(\subseteq\),
+    então o sistema \(\langle D_s \,\colon s\in S\rangle\) construído no Exemplo
+    3.18 do  Capítulo 10 é uma representação de \((S,\subseteq)\) por intervalos
+    fechados na reta real.
     \end{enumerate}
   \end{exemplo}
   
-  
-  O estudo de árvores finitas é um dos conceitos principais de combinatória. Nós não vamos
-  nos aprofundar nisso aqui, tomaremos nossa atenção para árvores infinitas. Nos preocuparemos
-  majoritariamente com sobre quais circunstâncias uma árvore possui ramo cofinal.
+  O estudo de árvores finitas é um dos  principais conceitos que aparecem em
+  combinatória. Entretanto, não vamos nos aprofundar muito no tema. Ao invés
+  disso, vamos investigar algumas propriedades árvores infinitas, nos preocupando
+  especialmente com condições suficientes para que  uma árvore possua um ramo cofinal.
   Para árvores cuja altura é um ordinal sucessor a resposta é óbvia: se \(h(T)=\alpha +1\),
-  então \(T_\alpha\neq\emptyset\) e \({{y\in T | y\leq x}}\) é ramo cofinal em \(T\) para qualquer
-  \(x\in T_\alpha\). Assim, focaremos em árvores de altura limite. O Exemplo 3.2(d) nos diz que
-  existem árvores de altura \(\omega\) que possuem somente ramos finitos. O próximo teorema, a
-  observação mais básica relevante para nossos estudos, nos mostra que isso não pode acontecer se
-  a árvore é suficientemente "esguia"
+  então \(T_\alpha\neq\varnothing\) e para qualquer \(x\in T_\alpha\) temos que
+  \({{y\in T \,\colon y\leq x}}\) é ramo cofinal de \(T\). Assim, focaremos em
+  árvores cuja altura é um limite. O Exemplo 3.2(d) nos diz que
+  existem árvores de altura \(\omega\) que possuem apenas ramos finitos. O
+  próximo teorema, que é a observação mais básica com alguma relevância
+  para nossos estudos, mostra que isso não pode acontecer
+  se a árvore é suficientemente "esguia".
 
-    \begin{teo}[Lema de König]
-  Se $T$ é uma árvore de altura $\omega$, com todos os níveis finitos, então T admite um ramo de altura $\omega$.
+  \begin{teo}[Lema de König]
+  Se \(T\) é uma árvore de altura \(\omega\), com todos os níveis finitos, então
+  \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
   \begin{proof}
-  Equivalentemente, temos que provar que, toda árvore de altura $\omega$, tal que cada nó tem um número finito de sucessores imediatos, tem um ramo infinito.
-  De fato vamos construir, com recursão, uma sequência(infinita) $\langle c_n\rangle_{n=0}^{\infty}$ de nós de $T$ tal que, para todo $n$, $\{a\in T: c_n\leq a\}$ é infinito. Seja \c_{0} a raíz de T, note que \(\{a \in T \mid c_{0} \leq a \}= T é finito. Como
-  $$
-  \{a\in T: c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S} \{a\in T: b\leq a\}
-  $$
-  onde $S$ é o conjunto dos sucessores imediatos de $c_n$. Logo, para pelo menos um $b\in S$, $\{a\in T: b\leq a\}$ é infinito, assim defina $c_{n+1}$ um tal $b$. 
-  Falta verificar que $\{a\in T: c_n\geq a \text{ para algum } n\}$ é um ramo de $T$ com altura $\omega$.
+    Equivalentemente, temos que provar que, toda árvore de altura \(\omega\),
+    tal que cada nó tem um número finito de sucessores imediatos, tem um ramo infinito.
+  De fato vamos construir, com recursão, uma sequência(infinita) \(\langle c_n\rangle_{n=0}^{\infty}\) de nós de \(T\) tal que, para todo \(n\), \(\{a\in T\,\colon c_n\leq a\}\) é infinito. Seja \(c_0\) a raiz de T, note que \(\{a \in T\,\colon \mid c_{0} \leq a \}= T\) é finito. Como
+  \[
+  \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S} \{a\in T\,\colon b\leq a\}
+  \]
+  onde \(S\) é o conjunto dos sucessores imediatos de \(c_n\). Logo, para pelo menos um \(b\in S\), \(\{a\in T\,\colon b\leq a\}\) é infinito, assim defina \(c_{n+1}\) um tal \(b\). 
+  Falta verificar que \(\{a\in T\,\colon c_n\geq a \text{ para algum } n\}\) é um ramo de \(T\) com altura \(\omega\).
   
   \end{proof}
   
-    Observe que, no lema anterior, usamos o Teorema da Recursão sem explicitamente especificar uma função $g$, que o enunciado prevê para calcular $c_{n+1}$ a partir de $c_n$, e de fato para fazer isso precisamos de alguma forma do axioma da escolha.
+    Observe que, no lema anterior, usamos o Teorema da Recursão sem explicitamente especificar uma função \(g\), que o enunciado prevê para calcular $c_{n+1}$ a partir de $c_n$, e de fato para fazer isso precisamos de alguma forma do axioma da escolha.
   Por exemplo, seja $k$ uma função escolha para $\mathcal{P}(T)$. 
   Se $S_c$ é o conjunto de todos os sucessores imediatos de $c$ então definindo $g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é infinita}\}\big )$ temos que $c_{n+1} = g(c_n, n)$ e portanto estamos conforme o Teorema da Recursão que vimos.
   O próximo exercício será uma generalização do Lema de König.
