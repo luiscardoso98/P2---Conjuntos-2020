@@ -13,7 +13,8 @@
 Pedro Felizatto - Número USP:9794531\\
 Pietro Mesquita Piccione - Número USP: 4630640\\
 Mateus Schmidt Mattos Lopes Pereira - Número USP: 10262892\\
-Luís Cardoso - Número USP: 4552403}
+Luís Cardoso - Número USP: 4552403\\
+Ariel Campêlo Viana Morais - Número USP: 9302177}
 \date{\today}
 \begin{document}
 \maketitle
@@ -293,6 +294,16 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   Por exemplo, seja $k$ uma função escolha para $\mathcal{P}(T)$. 
   Se $S_c$ é o conjunto de todos os sucessores imediatos de $c$ então definindo $g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é infinita}\}\big )$ temos que $c_{n+1} = g(c_n, n)$ e portanto estamos conforme o Teorema da Recursão que vimos.
   O próximo exercício será uma generalização do Lema de König.
+  
+  \begin{exercicio}
+  Seja \((T,\leq)\) uma árvore de altura $\kappa$ ($\kappa$ um cardinal infinito), com todos os níveis finitos. Prove que T possui um ramo de tamanho $\kappa$.
+  \begin{proof}
+  \item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
+  Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
+  \end{proof}
+  \end{exercicio}
+  
+  
   Então podemos considerar o seguinte problema: Se $T$ é uma árvore de altura $\omega_1$, onde cada nível é contável, é verdade que $T$ tem um ramo de comprimento $\omega_1$? NÃO!
 \begin{definition}
   Uma árvore de altura $\omega_1$ é chamada de uma \textit{árvore de Aronszajn} se todos os os seus níveis são no máximo contáveis e se não possui ramos de comprimento $\omega_1$.
@@ -317,8 +328,6 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   
   Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
 \end{proof}
-
-
 
 Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis têm cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existência de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
   
