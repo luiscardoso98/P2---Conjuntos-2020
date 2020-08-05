@@ -297,9 +297,26 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   
   \begin{exercicio}
   Seja \((T,\leq)\) uma árvore de altura $\kappa$ ($\kappa$ um cardinal infinito), com todos os níveis finitos. Prove que T possui um ramo de tamanho $\kappa$.
-  \begin{proof}
-  \item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
-  Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
+  \begin{proof}[Solução]
+  
+  Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como um compacto contido num espaço topológico produto.
+  De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), munido do produto das topologias discretas, então o conjunto \(C\) dos ramos da árvore é identificado como
+  \(C=\{(x_\alpha)_{\alpha<\kappa}\in X : x_\beta<x_{\beta+1}\text{ pra todo }\beta\}\), onde definimos \(0>x\text{ pra todo }x\in T\).
+  
+  Não é difícil ver que \(C\) é fechado, portanto como \(X\) é compacto pelo Teorema de Tychonoff, \(C\) é compacto.
+  Agora queremos construir \(F_\lambda\subset C\) fechados encaixantes, então teremos que \(\bigcap F_\lambda\neq\varnothing\), e assim \(x\in\bigcap F_\lambda\) será o ramo que desejamos.
+  
+  Defina \(F_0\doteq C\). Indutivamente suponhamos \(F_\alpha\) bem definido para \(\alpha<\lambda\), de maneira tal que \(\sup\{\ell(b):b\in F_\alpha\}=\kappa\) (Como visto no exercício 3.2(iv)).
+  %falta definir ell(b)
+  Como todo nó possui somente finitos sucessores imediatos, temos que \(A_\lambda=(\bigcap_{\alpha<\lambda} F_\alpha)\cap T_\lambda\) é finito. Agora existe \(a_\lambda\in A_\lambda\) de modo que quando definimos \[F_\lambda\doteq\{(x_\beta)\in C : x_\lambda=a_\lambda\}\bigcap_{\alpha<\lambda} F_\alpha\] temos que \(\sup\{\ell(b): b\in F_\lambda\}=\kappa\), e não é difícil ver que \(F_\lambda\) é fechado.
+  Então temos que existe \(x\in\bigcap F_\lambda\), que será claramente o ramo de comprimento \(\kappa\).
+  
+  
+  %comentário do ariel que precisamos revisar
+  %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
+  %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
+  
+  
   \end{proof}
   \end{exercicio}
   
@@ -309,9 +326,9 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   Uma árvore de altura $\omega_1$ é chamada de uma \textit{árvore de Aronszajn} se todos os os seus níveis são no máximo contáveis e se não possui ramos de comprimento $\omega_1$.
 \end{definition}
   
-\begin{theorem}
+\begin{teo}
   Existem árvores de Aronszajn de altura $\omega_1$.
-\end{theorem}
+\end{teo}
 
 \begin{proof}
   Construímos os níveis $T_{\alpha}$, $\alpha < \omega_1$ de uma árvore de Aronszajn por recursão transfinita de tal modo que
