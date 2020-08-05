@@ -27,6 +27,9 @@ passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 
 \setcounter{section}{2}
 \section{Árvores}
+\subsection*{Introdução}
+Como partições, o estudo de árvores originou-se na teoria de combinatória finita,
+mas também é de interesse da teoria dos conjuntos estudá-las.
 \begin{definition}
   Uma \emph{árvore} é um conjunto ordenado \((T,\leq)\) tal que:
  \begin{enumerate}[(i)]
@@ -36,7 +39,7 @@ passos que ficaram em segundo plano no tratamento feito na obra mencionada.
   \end{enumerate}
 \end{definition}
 Os elementos de \(T\) são chamados de \emph{nós}. Em particular,
-o menor elemento de \(T\) é chamado  de \emph{raíz}.
+o menor elemento de \(T\) é chamado  de \emph{raiz}.
 Se \(x,y\in T\) são nós tais que  \(y<x\), dizemos que \(y\) é um
 \emph{antecessor} de \(x\), e que \(x\) é um \emph{sucessor} de \(y\).
 
@@ -83,7 +86,7 @@ definições que apresentamos:
 \begin{exercicio}
   Seja \((T,\leq)\) uma árvore. Mostre que:
   \begin{enumerate}[(i)]
-  \item O único elemento \(r \in T\) tal que \(h(r)=0\) é a raíz. Em particular,
+  \item O único elemento \(r \in T\) tal que \(h(r)=0\) é a raiz. Em particular,
     \(T_0\not =\varnothing\);
   \item Se \(\alpha,\beta\) são ordinais tais que \(\alpha\not = \beta\), então \(T_\alpha\cap T_\beta =\varnothing\);
   \item \(T=T^{(h(T))}=\bigcup_{\alpha < h(T)}T_\alpha\);
@@ -106,7 +109,7 @@ definições que apresentamos:
 \begin{proof}[Solução]\hfill
   \begin{enumerate}[(i)]
   \item Por definição, \(T\) possui um menor
-    elemento, o que implica que \(T\) possui uma raíz \(r\). Para verificar a
+    elemento, o que implica que \(T\) possui uma raiz \(r\). Para verificar a
     unicidade de \(r\), suponha que \(T\) possui duas raízes \(r_1\) e \(r_2\)
     distintas. Neste caso,  para todo \(x\in T\) temos que
     \(r_1\leq x\). Em particular temos que
@@ -223,7 +226,7 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
 
       Por fim, observemos que existe uma  correspondência biunívoca entre os
       ramos de \(T\) e as funções de \(\lambda\) em \(A\):
-      se \(F\in A^{< \lambda}\) então \({\rest{F}{\alpha}\| \alpha <\lambda}\) é
+      se \(F\in A^{< \lambda}\) então \(\{{\rest{F}{\alpha} : \alpha <\lambda}\}\) é
       um ramo em \(T\). Por outro lado, se \(B\) é um ramo em
       \(T\) então \(B\) é um sistema compatível de funções
       e \(F=\bigcup B\in A^\lambda\). Vale notar que todos os ramos de \(T\) são
@@ -249,15 +252,15 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
     Capítulo 3).
     \item Seja \((\Reals,\leq)\). Uma \emph{representação} de uma árvore \((T,\preceq)\)
     \emph{por intervalos} em \((\Reals,\leq)\) é uma função 1-a-1 \(\Phi\) que para cada 
-    \(x\in T\), \(\Phi (x)\)é um intervalo em \((\Reals,\leq)\) de modo que para todo \(x,y\in T\):
+    \(x\in T\), \(\Phi (x)\) é um intervalo em \((\Reals,\leq)\) de modo que para todo \(x,y\in T\):
     \begin{enumerate}[(i)]
     \item \(x\preceq y\iff \Phi(x)\supseteq\Phi(y)\); 
     \item \(x\) e \(y\) são incomparáveis \(\iff\) \(\Phi(x)\cap\Phi(y) =\emptyset\)
     \end{enumerate}
     Isso implica, em particular, que \((\Phi[T],\supseteq)\) é uma árvore isomorfa à
     \((T,\preceq)\). Por exemplo, o sistema \(\langle D_s \| s\in S\rangle\) cosntruído
-    no Exemplo 3.18, Capítulo 10, é uma representação da árvore \(S=Seq({0,1})={0,1}^{<\omega}\)
-    (ordenado por \(\subseteq\) por intervalos fechados na reta real.
+    no Exemplo 3.18, Capítulo 10, é uma representação da árvore \(S=Seq(\{0,1\})=\{0,1\}^{<\omega}\)
+    (ordenado por \(\subseteq\) por intervalos fechados na reta real).
     \end{enumerate}
   \end{exemplo}
   
@@ -266,9 +269,9 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   nos aprofundar nisso aqui, tomaremos nossa atenção para árvores infinitas. Nos preocuparemos
   majoritariamente com sobre quais circunstâncias uma árvore possui ramo cofinal.
   Para árvores cuja altura é um ordinal sucessor a resposta é óbvia: se \(h(T)=\alpha +1\),
-  então \(T_\alpha\neq\emptyset\) e \({y\in T\| y\leq x}\) é ramo cofinal em \(T\) para qualquer
+  então \(T_\alpha\neq\emptyset\) e \({{y\in T | y\leq x}}\) é ramo cofinal em \(T\) para qualquer
   \(x\in T_\alpha\). Assim, focaremos em árvores de altura limite. O Exemplo 3.2(d) nos diz que
-  existem árvores de altura \(\omega\)que possuem somente ramos finitos. O próximo teorema, a
+  existem árvores de altura \(\omega\) que possuem somente ramos finitos. O próximo teorema, a
   observação mais básica relevante para nossos estudos, nos mostra que isso não pode acontecer se
   a árvore é suficientemente "esguia"
 
@@ -276,7 +279,7 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   Se $T$ é uma árvore de altura $\omega$, com todos os níveis finitos, então T admite um ramo de altura $\omega$.
   \end{teo}
   \begin{proof}
-  Equivalentemente, temos que provar que, toda árvore de altura $\omega$, tal que cada nó tem um numero finito de sucessores imediatos, tem um ramo infinito.
+  Equivalentemente, temos que provar que, toda árvore de altura $\omega$, tal que cada nó tem um número finito de sucessores imediatos, tem um ramo infinito.
   De fato vamos construir, com recursão, uma sequência(infinita) $\langle c_n\rangle_{n=0}^{\infty}$ de nós de $T$ tal que, para todo $n$, $\{a\in T: c_n\leq a\}$ é infinito. Pelo exercício \ref{ex31-iv}
   $$
   \{a\in T: c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S} \{a\in T: b\leq a\}
@@ -313,7 +316,7 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
 \end{proof}
 
-Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis tem cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existencia de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
+Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis têm cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existência de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
   
   \bibliographystyle{plain}
   \bibliography{sample}
