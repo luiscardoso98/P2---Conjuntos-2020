@@ -280,7 +280,7 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   \end{teo}
   \begin{proof}
   Equivalentemente, temos que provar que, toda árvore de altura $\omega$, tal que cada nó tem um número finito de sucessores imediatos, tem um ramo infinito.
-  De fato vamos construir, com recursão, uma sequência(infinita) $\langle c_n\rangle_{n=0}^{\infty}$ de nós de $T$ tal que, para todo $n$, $\{a\in T: c_n\leq a\}$ é infinito. Pelo exercício \ref{ex31-iv}
+  De fato vamos construir, com recursão, uma sequência(infinita) $\langle c_n\rangle_{n=0}^{\infty}$ de nós de $T$ tal que, para todo $n$, $\{a\in T: c_n\leq a\}$ é infinito. Seja \c_{0} a raíz de T, note que \(\{a \in T \mid c_{0} \leq a \}= T é finito. Como
   $$
   \{a\in T: c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S} \{a\in T: b\leq a\}
   $$
@@ -317,6 +317,8 @@ Assim nos resta mostrar que se $\alpha\geq \ell (b)\implies \alpha\geq h(T)$, de
   
   Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
 \end{proof}
+
+
 
 Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis têm cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existência de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
   
