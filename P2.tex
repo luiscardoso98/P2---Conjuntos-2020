@@ -311,18 +311,19 @@ definições que apresentamos:
   O estudo de árvores finitas é um dos  principais conceitos que aparecem em
   combinatória. Entretanto, não vamos nos aprofundar muito no tema. Ao invés
   disso, vamos investigar algumas propriedades árvores infinitas, nos preocupando
-  especialmente com condições suficientes para que  uma árvore possua um ramo cofinal.
+  especialmente com condições suficientes para que uma árvore possua um ramo cofinal.
+
   Para árvores cuja altura é um ordinal sucessor a resposta é óbvia: se \(h(T)=\alpha +1\),
   então \(T_\alpha\neq\varnothing\) e para qualquer \(x\in T_\alpha\) temos que
   \({{y\in T \,\colon y\leq x}}\) é ramo cofinal de \(T\). Assim, focaremos em
-  árvores cuja altura é um limite. O item (d) do Exemplo 3.2 nos diz que
+  árvores cuja altura é um limite. Por outro lado, o item (d) do Exemplo 3.2 nos diz que
   existem árvores de altura \(\omega\) que possuem apenas ramos finitos. O
-  próximo teorema, que é a observação mais básica com alguma relevância
-  para nossos estudos, mostra que isso não pode acontecer
-  se a árvore é suficientemente "esguia".
+  próximo teorema mostra que,  pensando na largura de uma árvore como um
+  majorante para a cardinalidade de seus níveis, se uma aŕvore \(T\) de altura
+  enumerável é suficientemente "esguia", então \(T\) possui um ramo cofinal.
 
   \begin{teo}[Lema de König]
-  Se \(T\) é uma árvore de altura \(\omega\), com todos os níveis finitos, então
+  Seja \((T,\leq)\) uma árvore de altura \(\omega\). Se todos os níveis de \(T\) finitos, então
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
 \begin{proof}
@@ -354,23 +355,37 @@ definições que apresentamos:
   é um ramo de \(T^{(\omega)}=T\).
   \end{proof}
 
-  
-    Observe que no resultado acima usamos o Teorema da Recursão sem
+    Apesar da prova acima conter um pouco mais de detalhe em relação àquela
+    apresentada em \cite{jech}, não fizemos a prova em mais detalhe ainda para
+    não tirar o foco da sua ideia principal, que é construir a sequência
+    \(\langle c_n\rangle_{n=0}^\omega\) 'de baixo para cima', garantindo que
+    sempre temos mais 'infinitos elementos' para serem adicionados e em seguida
+    utilizar a sequência resultante para construir um ramo 'de cima para baixo'.
+
+    Em especial, observe que usamos o Teorema da Recursão sem
     explicitamente especificar uma função \(g\) para
     calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para consturir tal função precisamos
-    aplicar o Axioma da Escolha. De fato, se \(k\) é uma função escolha para
+    aplicar o Axioma da Escolha: se \(k\) é uma função escolha para
     \(\mathcal{P}(T)\) e \(S_c\) é o conjunto de todos os sucessores imediatos
     de \(c\), então definindo \(g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é
       infinita}\}\big )\) temos que \(c_{n+1} = g(c_n, n)\). Nesse cenário, estamos
-    conforme o Teorema da Recursão que vimos. O próximo exercício será uma
+    conforme o Teorema da Recursão que vimos. No próximo exercício veremos que,
+    se \(T\) é uma árvore com 'largura finita', então \(T\) possui um ramo
+    cofinal não importando sua altura. Nesse sentido, o resultado a seguir é uma
     generalização do Lema de König.
   
   \begin{exercicio}
-  Seja \((T,\leq)\) uma árvore de altura $\kappa$ ($\kappa$ um cardinal
-  infinito), com todos os níveis finitos. Prove que T possui um ramo de tamanho
-  $\kappa$.
-  \end{exercicio}
-  \begin{proof}[Solução]
+  Seja \(\kappa\) um cardinal infinito e seja \((T,\leq)\) uma árvore de altura
+  $\kappa$. Prove que se todos os níveis de \(T\) são finitos, então \(T\)
+  possui um ramo de tamanho $\kappa$.
+\end{exercicio}
+\textcolor{red}{Ariel S.: Não manjo de topologia então não tenho condições de
+  verificar a prova a seguir propriamente. De toda forma, me parece que a ideia
+  seria repetir a prova do Lema de König usando recursão transfinita.
+  Alguém manja?}
+\textcolor{green}{Ariel S.:OLHAR LINK: https://math.stackexchange.com/q/464694/253958 }
+
+\begin{proof}[Solução]
   
   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como um compacto contido num espaço topológico produto.
   De fato, temos que se \(X=\Pi_{\alpha<\kappa}(T_\alpha\cup\{0\})\), munido do produto das topologias discretas, então o conjunto \(C\) dos ramos da árvore é identificado como
@@ -388,30 +403,44 @@ definições que apresentamos:
   %comentário do ariel que precisamos revisar
   %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
   %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
-  
-  
   \end{proof}
-  \end{exercicio}
   
-  
-  Então podemos considerar o seguinte problema: Se $T$ é uma árvore de altura $\omega_1$, onde cada nível é contável, é verdade que $T$ tem um ramo de comprimento $\omega_1$? NÃO!
-\begin{definition}
-  Uma árvore de altura $\omega_1$ é chamada de uma \textit{árvore de Aronszajn} se todos os os seus níveis são no máximo contáveis e se não possui ramos de comprimento $\omega_1$.
-\end{definition}
+
+  Os dois últimos resultados nos mostram que para uma árvore \((T,\leq)\) cuja altura é um
+  ordinal limite maior ou igual a \(\omega\) com níveis finitos, então \(T\)
+  possui um ramo cofinal. A partir deste ponto, podemos pensar em generalizações
+  desta condição. Por exemplo, é natural que nos perguntemos se $T$ é uma árvore
+  de altura $\kappa$, onde cada nível tem cardinalidade estritamente menor de
+  que \(\kappa\), é verdade que $T$ tem um
+  ramo de comprimento $\kappa$?  A resposta para tal pergunta é \textbf{NÃO!}
+
+  \begin{definition}
+    Seja \(\kappa\) um cardinal não enumerável.
+    Uma árvore de altura $\kappa$ é uma \textit{árvore de Aronszajn} se
+    todos os os seus níveis tem cardinalidade estritamente menor do que \(\kappa\)
+    e se não possui ramos de comprimento $\kappa$.
+  \end{definition}
+
+ A seguir, vamos estudar mais a fundo o caso em que \(\kappa=\omega_1\). Nesta
+  situação, conseguimos construir árvores de Aronszajn, que servem como
+  contra-exemplo  para a indagação que propusemos acima.
   
 \begin{teo}
   Existem árvores de Aronszajn de altura $\omega_1$.
 \end{teo}
 
 \begin{proof}
-  Construímos os níveis $T_{\alpha}$, $\alpha < \omega_1$ de uma árvore de Aronszajn por recursão transfinita de tal modo que
-  
-  \begin{enumerate}
-      \item $T_{\alpha} \subseteq \omega^{\alpha}$; $\left|T_{\alpha}\right| \le \aleph_0$;
-      \item Se $f \in T_{\alpha}$, então $f$ é um-pra-um e $(\omega - ranf)$ é infinito;
-      \item Se $f \in T_{\alpha}$ e $\beta < \alpha$ então $f |_{\beta} \in T_{\beta}$;
-      \item Para qualquer $\beta < \alpha$, qualquer $g \in T_{\beta}$, e qualquer $X \subseteq \omega - rang$ finito, existe uma $f \in T_{\alpha}$ tall que $f \supseteq g$ e $ranf \cap X = \emptyset$.
-  \end{enumerate}
+  Vamos utilizar recursão transfinita para contruir, para cada ordinal \(\alpha
+  <\omega_1\), o \(\alpha\)-ésimo nível de uma árvore de Aronszajn tal que:
+  \begin{enumerate}[(i)]
+      \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
+      \item Se \(f \in T_{\alpha}\), então \(f\) é biunívoca e \(\omega - \ran f\) é infinito;
+      \item Se \(f \in T_{\alpha}\) e \(\beta < \alpha\) então \(\rest{f} {\beta} \in T_{\beta}\);
+      \item Para qualquer \(\beta < \alpha\), qualquer \(g \in T_{\beta}\), e
+        qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
+        T_{\alpha}\) tal que $g \subseteq f$ e \(\ran f \cap X = \varnothing\).
+      \end{enumerate}
+      
   Vamos assumir que isso foi feito, e vamos mostrar que $T = \bigcup_{\alpha < \omega_1}T_{\alpha}$ é uma árvore de Aronszajn. Claramente $T$ é uma árvore por $(3)$, cada nível é no máximo contável por $(1)$, e sua altura é $\omega_1$ (por $(4)$, cada $T_{\alpha} \neq \emptyset$). Se $B$ fosse um ramo de comprimento $\omega_1$ em $T$, então $F = \bigcup B$ seria uma função um-pra-um de $\omega_1$ para $\omega$ (por $(2)$), uma contradição.
   
   Falta construir $T_{\alpha}$ para $\alpha$ limite. Para qualquer $g \in T_{\beta}$, $\beta < \alpha$, e qualquer $X \subseteq \omega - rang$ finito, construímos uma $f = f(g, X)$ recursivamente da seguinte maneira. Fixe uma sequência crescente $\langle \alpha_n \rangle_{n=0}^{\infty}$ tal que $\alpha_0 = \beta$ e $sup\{\alpha_n | n \in \mathbb{N}\} = \alpha$. Seja $f_0 = g \in T_{\alpha_0}$ e $X_0 = X \subseteq \omega - ranf_0$. Tendo definido $f_n \in T_{\alpha_n}$ e $X_n = X \subseteq \omega - ranf_n$ finitos, nós primeiro tomamos um $X_{n+1} \supset X_n$ finito, $X_{n+1} = X \subseteq \omega - ranf_n$ (isto é possível porque o último conjunto é infinito, por $(2)$) e então selecionamos algumas $f_{n+1} \in T_{\alpha_{n+1}}$ tais que $f_{n+1} \supseteq f_n$ e $X_{n+1} \cap ranf_{n+1} = \emptyset$ (possível por $(4)$). Seja $f = \bigcup_{n = 0}^{\infty}f_n$. Claramente $f: \alpha \rightarrow \omega$, $f$ é um-pra-um (pois todas as $f_n$ são), $ranf \cap (\bigcup_{n = 0}^{\infty} X_n) = \emptyset$, portanto $\omega - ranf$ é infinito, e $ranf \cap X = \emptyset$. Então $f$ satisfaz $(2)$. Para $\beta < \alpha$, $f |_{\beta} = f_{n} |_{\beta}$ quando $\beta < \alpha_n$, e portanto $(3)$ também é satisfeito.
@@ -419,8 +448,27 @@ definições que apresentamos:
   Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
 \end{proof}
 
-Mais geralmente, uma árvore de altura $\kappa$ ($\kappa$ um cardinal não-contável) é chamada de uma árvore de Aronszajn se todos os seus níveis têm cardinalidade menor que $\kappa$ e não existem ramos de comprimento $\kappa$. A questão da existência de tais árvores é muito complicada e ainda não foi totalmente resolvida. É fácil mostrar que elas sempre existem quando $\kappa$ é singular (exercício). São de interesse particular os cardinais não-contáveis para os quais vale um análogo do Lema de Kőnig, i.e., não existem árvores de Aronszajn de altura $\kappa$; dizemos que tais cardinais possuem a \textit{propriedade da árvore}. Acontece que cardinais fortemente inacessíveis com a propriedade da árvore são precisamente os cardinais fracamente compactos definidos na seção 2.
-  
+ A questão da existência de árvores de Aronszajn é muito complicada e ainda não
+ foi totalmente resolvida. De modo geral, dizemos que cardinais \(\kappa\)
+ não-contáveis para os quais vale um  análogo do Lema de Kőnig, i.e., não
+ existem árvores  de Aronszajn de altura $\kappa$; dizemos que tais cardinais
+ possuem a  \textit{propriedade de árvore}. O exercício a seguir nos mostra que
+ cardinais singulares não satisfazem tal requisito.
+
+ \begin{exercicio}
+  Construa uma árvore de Aronszajn de altura \(\aleph_{\omega}\). Generalize
+  para um cardinal singular \(\kappa\) qualquer.
+\end{exercicio}
+\begin{proof}[Solução]
+\textcolor{green}{Ariel S. : VER LINK:https://math.stackexchange.com/a/1686329/253958}
+\end{proof}
+
+ Por fim, notamos que que cardinais
+ fortemente inacessíveis com a propriedade da árvore são precisamente os
+ cardinais fracamente compactos definidos na seção anterior.
+ \textcolor{red}{Seria bom elaborar um pouquinho nisso aqui também, acontece
+   que não tenho a menor condição. Alguém leu a Seção 2}
+
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
