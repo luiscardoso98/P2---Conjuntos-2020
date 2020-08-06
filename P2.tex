@@ -165,7 +165,7 @@ definições que apresentamos:
 \end{enumerate}
 \end{proof}
 \begin{exercicio}
-    Mostre que:
+    Seja \((T,\leq)\) uma árvore. Mostre que:
     \begin{enumerate}[(i)]
     \item Cada cadeia em \(T\) é bem-ordenada;
     \item Se \(b\) é um ramo de \(T\) e \(x\in b\), e \(y<x\), então \(y\in b\);
@@ -279,9 +279,9 @@ definições que apresentamos:
       \end{enumerate}
      Nessa situação, costuma-se identificar um  ramo utilizando sua função correspondente.
 
-   \item Seja \(A=\Naturals \). Consideremos
+   \item Consideremos o conjunto
     \(T\subseteq \Naturals^{<\omega}\)
-    o conjunto das sequências de números naturais que são finitas e
+     das sequências de números naturais que são finitas e
     decrescentes, ou seja, \(f\in T \) se, e somente se  \(f(i)>f(j)\)  para todo
     \(i<j<\dom(f)\in\Naturals\).  Então \((T,\subseteq)\) é uma subárvore de
     \((\Naturals^{<\omega},\subseteq)\). Note que a altura de  \(T\) é 
@@ -301,7 +301,7 @@ definições que apresentamos:
     \end{enumerate}
     Em particular, as propriedades acima implicam que \((\Phi[T],\supseteq)\) é
     uma árvore isomorfa a \((T,\preceq)\). Por exemplo, se considerarmos
-    a árvore \(S=Seq(\{0,1\})=\{0,1\}^{<\omega}\) ordenado por \(\subseteq\),
+    a árvore \(S=\text{Seq}(\{0,1\})=\{0,1\}^{<\omega}\) ordenado por \(\subseteq\),
     então o sistema \(\langle D_s \,\colon s\in S\rangle\) construído no Exemplo
     3.18 do  Capítulo 10 é uma representação de \((S,\subseteq)\) por intervalos
     fechados na reta real.
@@ -315,7 +315,7 @@ definições que apresentamos:
   Para árvores cuja altura é um ordinal sucessor a resposta é óbvia: se \(h(T)=\alpha +1\),
   então \(T_\alpha\neq\varnothing\) e para qualquer \(x\in T_\alpha\) temos que
   \({{y\in T \,\colon y\leq x}}\) é ramo cofinal de \(T\). Assim, focaremos em
-  árvores cuja altura é um limite. O Exemplo 3.2(d) nos diz que
+  árvores cuja altura é um limite. O item (d) do Exemplo 3.2 nos diz que
   existem árvores de altura \(\omega\) que possuem apenas ramos finitos. O
   próximo teorema, que é a observação mais básica com alguma relevância
   para nossos estudos, mostra que isso não pode acontecer
@@ -325,25 +325,51 @@ definições que apresentamos:
   Se \(T\) é uma árvore de altura \(\omega\), com todos os níveis finitos, então
   \(T\) admite um ramo de altura \(\omega\).
   \end{teo}
-  \begin{proof}
-    Equivalentemente, temos que provar que, toda árvore de altura \(\omega\),
-    tal que cada nó tem um número finito de sucessores imediatos, tem um ramo infinito.
-  De fato vamos construir, com recursão, uma sequência(infinita) \(\langle c_n\rangle_{n=0}^{\infty}\) de nós de \(T\) tal que, para todo \(n\), \(\{a\in T\,\colon c_n\leq a\}\) é infinito. Seja \(c_0\) a raiz de T, note que \(\{a \in T\,\colon \mid c_{0} \leq a \}= T\) é finito. Como
+\begin{proof}
+  Em primeiro lugar, observamos que se  \(T\) é uma árvore, então cada nó de \(T\) possui
+  um número finito de sucessores imediatos se, e somente se todos os níveis de
+  \(T\) são finitos. Ancorados neste fato, vamos mostrar que se \(T\) é uma
+  árvore de altura \(\omega\) tal que cada nó tem um número finito de sucessores
+  imediatos,  então \(T\) tem um ramo infinito. De fato, vamos utilizar recursão
+  para  construir uma sequência \(\langle c_n\rangle_{n=0}^{\omega}\)  de nós de \(T\) tal que,
+  para todo \(n<\omega\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
+  infinito.
+
+  Seja \(c_0\) a raiz de T e  note que \(\{a \in T\,\colon c_{0} \leq a \}= T\)
+  é infinito. Além disso, se \(\{a\in T\,\colon c_n\leq a\}\) é infinito para
+  \(n<\omega\) e consideramos  o
+  conjunto \(S_n\) dos sucessores imediatos de \(c_n\), então
   \[
-  \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S} \{a\in T\,\colon b\leq a\}
+  \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S_n} \{a\in T\,\colon b\leq a\}.
   \]
-  onde \(S\) é o conjunto dos sucessores imediatos de \(c_n\). Logo, para pelo menos um \(b\in S\), \(\{a\in T\,\colon b\leq a\}\) é infinito, assim defina \(c_{n+1}\) um tal \(b\). 
-  Falta verificar que \(\{a\in T\,\colon c_n\geq a \text{ para algum } n\}\) é um ramo de \(T\) com altura \(\omega\).
-  
+ Daí segue que existe \(b\in S_n\) tal que o conjunto \(\{a\in T\,\colon
+ b\leq a\}\) é infinito, assim podemos utilizar o Axioma da Escolha para
+ tomar \(c_{n+1}\) como tal \(b\). 
+ Finalmente, observamos que para cada \(\alpha<\omega\), o conjunto
+ \[\{a\in T\,\colon  a\leq c_n \text{ para algum }
+   n<\alpha\}=\bigcup_{n<\alpha}\{a\in T\,\colon a\leq c_n\}\] é
+  um ramo de \(T^{(\alpha)}\) com altura \(\alpha\). Daí,
+  segue por indução que \[\{a\in T\,\colon a\leq c_n \text{ para algum }
+    n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
+  é um ramo de \(T^{(\omega)}=T\).
   \end{proof}
+
   
-    Observe que, no lema anterior, usamos o Teorema da Recursão sem explicitamente especificar uma função \(g\), que o enunciado prevê para calcular $c_{n+1}$ a partir de $c_n$, e de fato para fazer isso precisamos de alguma forma do axioma da escolha.
-  Por exemplo, seja $k$ uma função escolha para $\mathcal{P}(T)$. 
-  Se $S_c$ é o conjunto de todos os sucessores imediatos de $c$ então definindo $g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é infinita}\}\big )$ temos que $c_{n+1} = g(c_n, n)$ e portanto estamos conforme o Teorema da Recursão que vimos.
-  O próximo exercício será uma generalização do Lema de König.
+    Observe que no resultado acima usamos o Teorema da Recursão sem
+    explicitamente especificar uma função \(g\) para
+    calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para consturir tal função precisamos
+    aplicar o Axioma da Escolha. De fato, se \(k\) é uma função escolha para
+    \(\mathcal{P}(T)\) e \(S_c\) é o conjunto de todos os sucessores imediatos
+    de \(c\), então definindo \(g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é
+      infinita}\}\big )\) temos que \(c_{n+1} = g(c_n, n)\). Nesse cenário, estamos
+    conforme o Teorema da Recursão que vimos. O próximo exercício será uma
+    generalização do Lema de König.
   
   \begin{exercicio}
-  Seja \((T,\leq)\) uma árvore de altura $\kappa$ ($\kappa$ um cardinal infinito), com todos os níveis finitos. Prove que T possui um ramo de tamanho $\kappa$.
+  Seja \((T,\leq)\) uma árvore de altura $\kappa$ ($\kappa$ um cardinal
+  infinito), com todos os níveis finitos. Prove que T possui um ramo de tamanho
+  $\kappa$.
+  \end{exercicio}
   \begin{proof}[Solução]
   
   Para demonstrar tal resultado, iremos visualizar os ramos dessa árvore como um compacto contido num espaço topológico produto.
