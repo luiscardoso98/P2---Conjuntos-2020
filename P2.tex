@@ -104,16 +104,25 @@ definições que apresentamos:
 \begin{proof}[Solução]\hfill
   \begin{enumerate}[(i)]
 
-  \item Por definição, \(T\) possui um menor
-    elemento, o que implica que \(T\) possui uma raiz \(r\). Para verificar a
-    unicidade de \(r\), suponha que \(T\) possui duas raízes \(r_1\) e \(r_2\)
-    distintas. Neste caso,  para todo \(x\in T\) temos que
-    \(r_1\leq x\). Em particular temos que
-    \(r_1\leq r_2\). Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
-    uma ordem, segue que \(r_1=r_2\), contradição. Finalmente notamos que,
-    como \(r\) é o menor elemento de \(T\), segue que \(\{x\in T\,\colon
-    x<r\}=\varnothing\). Como este último fato implica que \(h(r)=0\), concluímos que
+  \item Seja \(r\in T\) tal que \(h(r)=0\), então temos que \(\{x\in T\,\colon
+    x<r\}=\varnothing\), da onde segue que \(r\) é o menor elemento de \(T\), a raiz.
+    Agora suponhamos \(r_1\, r_2\in T\), de modo que \(h(r_1)=h(r_2)=0\). Então \(r_1\) e
+    \(r_2\) são raízes de \(T\). Neste caso,  para todo \(x\in T\) temos que
+    \(r_1\leq x\). Em particular temos que \(r_1\leq r_2\).
+    Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
+    uma ordem, segue que \(r_1=r_2\). Para \(r\in T\) raiz, temos \(h(r)=0\), logo
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
+    
+  % Por definição, \(T\) possui um menor
+  % elemento, o que implica que \(T\) possui uma raiz \(r\). Para verificar a
+  % unicidade de \(r\), suponha que \(T\) possui duas raízes \(r_1\) e \(r_2\)
+  % distintas. Neste caso,  para todo \(x\in T\) temos que
+  %  \(r_1\leq x\). Em particular temos que
+  %  \(r_1\leq r_2\). Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
+  %  uma ordem, segue que \(r_1=r_2\), contradição. Finalmente notamos que,
+  %  como \(r\) é o menor elemento de \(T\), segue que \(\{x\in T\,\colon
+  %  x<r\}=\varnothing\). Como este último fato implica que \(h(r)=0\), concluímos que
+  %  \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
 
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
     \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
