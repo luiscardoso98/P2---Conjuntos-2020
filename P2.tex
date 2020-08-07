@@ -438,15 +438,47 @@ definições que apresentamos:
       \item Se \(f \in T_{\alpha}\) e \(\beta < \alpha\) então \(\rest{f} {\beta} \in T_{\beta}\);
       \item Para qualquer \(\beta < \alpha\), qualquer \(g \in T_{\beta}\), e
         qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
-        T_{\alpha}\) tal que $g \subseteq f$ e \(\ran f \cap X = \varnothing\).
+        T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
+      \end{enumerate}
+
+     Em primeiro lugar, tomamos \(T_0=\{\varnothing\}\). Daí, assumindo que
+     construímos o nível \(T_\alpha\) satisfazendo (i)-(iv). Então,
+     definimos \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
+       T_\alpha \text{ e } a\in \omega -\ran g\}\]. Vamos verificar que
+     \(T_{\alpha+1}\) satisfaz (i)-(iv):
+     \begin{enumerate}[(i)]
+       \item \textcolor{red}{VERIFICAR!}
       \end{enumerate}
       
-  Vamos assumir que isso foi feito, e vamos mostrar que $T = \bigcup_{\alpha < \omega_1}T_{\alpha}$ é uma árvore de Aronszajn. Claramente $T$ é uma árvore por $(3)$, cada nível é no máximo contável por $(1)$, e sua altura é $\omega_1$ (por $(4)$, cada $T_{\alpha} \neq \emptyset$). Se $B$ fosse um ramo de comprimento $\omega_1$ em $T$, então $F = \bigcup B$ seria uma função um-pra-um de $\omega_1$ para $\omega$ (por $(2)$), uma contradição.
-  
-  Falta construir $T_{\alpha}$ para $\alpha$ limite. Para qualquer $g \in
-  T_{\beta}$, $\beta < \alpha$, e qualquer \(X \subseteq \omega - \ran g\) finito, construímos uma $f = f(g, X)$ recursivamente da seguinte maneira. Fixe uma sequência crescente $\langle \alpha_n \rangle_{n=0}^{\infty}$ tal que $\alpha_0 = \beta$ e $sup\{\alpha_n | n \in \mathbb{N}\} = \alpha$. Seja $f_0 = g \in T_{\alpha_0}$ e $X_0 = X \subseteq \omega - ranf_0$. Tendo definido $f_n \in T_{\alpha_n}$ e $X_n = X \subseteq \omega - ranf_n$ finitos, nós primeiro tomamos um $X_{n+1} \supset X_n$ finito, $X_{n+1} = X \subseteq \omega - ranf_n$ (isto é possível porque o último conjunto é infinito, por $(2)$) e então selecionamos algumas $f_{n+1} \in T_{\alpha_{n+1}}$ tais que $f_{n+1} \supseteq f_n$ e $X_{n+1} \cap ranf_{n+1} = \emptyset$ (possível por $(4)$). Seja $f = \bigcup_{n = 0}^{\infty}f_n$. Claramente $f: \alpha \rightarrow \omega$, $f$ é um-pra-um (pois todas as $f_n$ são), $ranf \cap (\bigcup_{n = 0}^{\infty} X_n) = \emptyset$, portanto $\omega - ranf$ é infinito, e $ranf \cap X = \emptyset$. Então $f$ satisfaz $(2)$. Para $\beta < \alpha$, $f |_{\beta} = f_{n} |_{\beta}$ quando $\beta < \alpha_n$, e portanto $(3)$ também é satisfeito.
-  
-  Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
+   Agora, vamos contruir \(T_{\alpha}\) no caso em que \(\alpha\) é um ordinal
+   limite. Considere um ordinal \(\beta< \alpha\), um nó \(g \in T_{\beta}\) e
+   um conjunto \(X \subseteq \omega - \ran g\) finito. Vamos construir uma
+   função \(f = f(g, X)\) recursivamente da seguinte maneira: fixe uma sequência
+   crescente \(\langle \alpha_n \rangle_{n=0}^{\infty}\) tal que \(\alpha_0  =\beta\)
+   e \(sup\{\alpha_n\,\colon n \in \mathbb{N}\} = \alpha\). Seja
+   \(f_0 = g \in T_{\alpha_0}\) e \(X_0 = X \subseteq \omega - ranf_0\). Tendo
+   definido \(f_n \in T_{\alpha_n}\) e \(X_n = X \subseteq \omega - \ran f_n\)
+   finito, nós primeiro tomamos um conjunto \(X_{n+1} \supset X_n\) finito tal
+   que \(X_{n+1} = X \subseteq \omega - \ran f_n\). Note que este último passo é
+   possível porque o conjunto \(\omega -\ran f_n\) é infinito por (ii).
+   Feito isso, escolhemos \(f_{n+1} \in T_{\alpha_{n+1}}\) tal que \(f_{n+1}
+   \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que possível
+   por (iv). Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon
+   \alpha\to \omega\) e  \(f\) é biunívoca pois cada uma  das funções \(f_n\)
+   também é. Além disso, temos que \(\ran f \cap (\bigcup_{n = 0}^{\infty} X_n)
+   = \emptyset\) e, portanto, \(\omega - \ran f\) é infinito e \(\ran f \cap X =
+   \varnothing\). Assim concluímos que \(f\) satisfaz (ii). Ademais, se  \(\beta <
+   \alpha\), temos que  \(\rest{f} {\beta}= \rest{(f_{n})}{\beta}\) sempre que
+   \(\beta < \alpha_n\), e portanto (iii) também é satisfeito.
+
+   \textcolor{red}{Sobre o parágrafo de baixo: OI?}
+    Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
+
+    Finalmente, vamos mostrar que \(T = \bigcup_{\alpha < \omega_1}T_{\alpha}\)
+    é uma árvore de Aronszajn.
+    \textcolor{red}{Sobre o parágrafo de baixo: OI?}
+      Claramente \(T\) é uma árvore por (iii) , cada nível é no máximo contável por \((i)\), e sua altura é \(\omega_1\) (por $(4)$, cada $T_{\alpha} \neq \emptyset$). Se $B$ fosse um ramo de comprimento $\omega_1$ em $T$, então $F = \bigcup B$ seria uma função um-pra-um de $\omega_1$ para $\omega$ (por $(2)$), uma contradição.
+
 \end{proof}
 
  A questão da existência de árvores de Aronszajn é muito complicada e ainda não
