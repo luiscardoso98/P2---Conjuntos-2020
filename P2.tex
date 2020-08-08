@@ -113,17 +113,6 @@ definições que apresentamos:
     uma ordem, segue que \(r_1=r_2\). Para \(r\in T\) raiz, temos \(h(r)=0\), logo
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
     
-  % Por definição, \(T\) possui um menor
-  % elemento, o que implica que \(T\) possui uma raiz \(r\). Para verificar a
-  % unicidade de \(r\), suponha que \(T\) possui duas raízes \(r_1\) e \(r_2\)
-  % distintas. Neste caso,  para todo \(x\in T\) temos que
-  %  \(r_1\leq x\). Em particular temos que
-  %  \(r_1\leq r_2\). Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
-  %  uma ordem, segue que \(r_1=r_2\), contradição. Finalmente notamos que,
-  %  como \(r\) é o menor elemento de \(T\), segue que \(\{x\in T\,\colon
-  %  x<r\}=\varnothing\). Como este último fato implica que \(h(r)=0\), concluímos que
-  %  \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
-
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
     \(\alpha=h(x)=\beta\), o que contradiz a unicidade de \(h(x)\).
 
@@ -137,14 +126,8 @@ definições que apresentamos:
 
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
-<<<<<<< HEAD
-    existe \(y\in T_\alpha\)
-    \(T_\alpha\) é não vazio. Assumindo o contrário, teremos que
-    \(h(x)>\alpha\geq h(T)\), que é um absurdo. Além disso,
-=======
     \(\{ y\in T_\alpha : y<x\}\) é não vazio. Assumindo o contrário, teremos que o ramo $b\doteq\{y\in T^{(h(x))}: y<x\}$ não possui elemento em $T_\alpha$, logo \[S(\alpha)=h(x)=\ell(b)\leq\alpha\] que é um absurdo. 
     Assim, tome $y\in T_\alpha$ tal que $y<x$ qualquer, temos que ,
->>>>>>> 9a295508ceb379d1d29fc8a7af48b80466d2c8d6
     se  existe \(z\) tal que \(y<z<x\), então
     \[h(y)=\alpha<h(z)<S(\alpha)=h(x),\] absurdo.
     Finalmente, suponha que
