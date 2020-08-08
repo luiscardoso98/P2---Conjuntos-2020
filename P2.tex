@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 \usepackage{packages}
+\theoremstyle{plain}\newtheorem{teo}{Teorema}[section]
 \title{Introdução à Teoria dos Conjuntos - Prova 2}
 \author{Ariel Serranoni Soares da Silva  - Número USP: 7658024\\
 Pedro Felizatto - Número USP:9794531\\
@@ -126,6 +127,14 @@ definições que apresentamos:
 
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
+<<<<<<< HEAD
+=======
+    existe \(y\in T_\alpha\), isto é,
+    \(T_\alpha\) é não vazio.
+    \textcolor{red}{<-arrumar!!->}
+    Assumindo o contrário, teremos que
+    \(h(x)>\alpha\geq h(T)\), que é um absurdo. Além disso,
+>>>>>>> 7afd88072a885394655f4da76ecaeef58feb2321
     \(\{ y\in T_\alpha : y<x\}\) é não vazio. Assumindo o contrário, teremos que o ramo $b\doteq\{y\in T^{(h(x))}: y<x\}$ não possui elemento em $T_\alpha$, logo \[S(\alpha)=h(x)=\ell(b)\leq\alpha\] que é um absurdo. 
     Assim, tome $y\in T_\alpha$ tal que $y<x$ qualquer, temos que ,
     se  existe \(z\) tal que \(y<z<x\), então
@@ -424,59 +433,71 @@ definições que apresentamos:
   situação, conseguimos construir árvores de Aronszajn, que servem como
   contra-exemplo  para a indagação que propusemos acima.
   
-\begin{teo}
+    \begin{teo}
   Existem árvores de Aronszajn de altura $\omega_1$.
-\end{teo}
+    \end{teo}
 
 \begin{proof}
-  Vamos utilizar recursão transfinita para contruir, para cada ordinal \(\alpha
-  <\omega_1\), o \(\alpha\)-ésimo nível de uma árvore de Aronszajn tal que:
+  Vamos primeiro construir uma família \(T_\alpha\), com \(T_0=\{\varnothing\}\) e que para \(\alpha
+  <\omega_1\), temos:
   \begin{enumerate}[(i)]
-      \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
-      \item Se \(f \in T_{\alpha}\), então \(f\) é biunívoca e \(\omega - \ran f\) é infinito;
-      \item Se \(f \in T_{\alpha}\) e \(\beta < \alpha\) então \(\rest{f} {\beta} \in T_{\beta}\);
-      \item Para qualquer \(\beta < \alpha\), qualquer \(g \in T_{\beta}\), e
-        qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
-        T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
-      \end{enumerate}
+    \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
+    \item Se \(f \in T_{\alpha}\), então \(f\) é injetora e \(\omega - \ran f\) é infinito;
+    \item Se \(f \in T_{\alpha}\) e \(\beta < \alpha\) então \(\rest{f} {\beta} \in T_{\beta}\);
+    \item Para qualquer \(\beta < \alpha\), qualquer \(g \in T_{\beta}\), e
+    qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
+    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
+    \end{enumerate}
 
-     Em primeiro lugar, tomamos \(T_0=\{\varnothing\}\). Daí, assumindo que
-     construímos o nível \(T_\alpha\) satisfazendo (i)-(iv). Então,
-     definimos \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
-       T_\alpha \text{ e } a\in \omega -\ran g\}\]. Vamos verificar que
-     \(T_{\alpha+1}\) satisfaz (i)-(iv):
-     \begin{enumerate}[(i)]
-       \item \textcolor{red}{VERIFICAR!}
-      \end{enumerate}
+    Em primeiro lugar, observe que uma vez demonstrada a existência de uma tal família,
+    se \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), mostraremos que \(T\) é a árvore de Aronszajn que desejamos. De fato, \((T,<)\) é um conjunto ordenado com a contenção de funções usual.
+    
+    Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset T,\) além disso, se \(x\in T\), então mostremos que \(A_x\doteq\{y\in T : y<x\}\) é bem ordenado. Para facilitar a notação, considere \(o\colon T\rightarrow \{\alpha<\omega_1\}\) tal que \(x\in T_{o(x)}\). Seja \(A\subset A_x\), assim defina \(A^*\doteq \{\alpha<\omega_1 : x\in T_\alpha\cap A\}\). Como os ordinais são bem ordenados, existe \(\beta\in A^*\) menor elemento de \(A^*\).
+    Logo, se \(m\in T_\beta\cap A\), então para todo \(g\in A\), \(o(g)\geq\beta\), e como \(\rest{f}{o(g)}=g\) e \(\rest{f}{\beta}=m\), \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o menor elemento de \(A\).
+    
+    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\), vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e \(X\) qualquer, então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em \(\omega\): \(F\) é função pois se \(\langle x,p\rangle,\langle x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade, \(f_p>f_q\). Assim \(\rest{f_p}{o(f_q)}=f_q\) então \(p=q\). Analogamente \(F\) é injetora. Absurdo.
+    
+    
+    Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda, T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor, \(\lambda=\alpha+1,\) para algum \(\alpha\), definimos
+    \[T_{\alpha+1}=\{g\cup\{\langle \alpha+1, a\rangle\}\,\colon g\in
+    T_\alpha \text{ e } a\in \omega -\ran g\}\]
+    
+    Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
+    \begin{enumerate}[(i)]
+      \item \(T_{\alpha+1}\subseteq\omega^{\alpha+1}\) por construção, e \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
+      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha+1,a\rangle\}\) para alguma \(g\in
+    T_\alpha \text{ e } a\in \omega -\ran g\). Sabemos que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\) para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
+      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha+1,a\rangle\}\) para alguma \(g\in
+    T_\alpha \text{ e } a\in \omega -\ran g\). Se \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\) pois \(\beta\leq\alpha\)
+      \item Para qualquer \(\beta < \alpha+1\), qualquer \(g \in T_{\beta}\), e
+    qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
+    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\). Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito). Então teremos que \(f\cup\{\langle\alpha+1,a\rangle\}\in T_{\alpha+1}\) é a função que desejamos
+    \end{enumerate}
       
-   Agora, vamos contruir \(T_{\alpha}\) no caso em que \(\alpha\) é um ordinal
-   limite. Considere um ordinal \(\beta< \alpha\), um nó \(g \in T_{\beta}\) e
+   Agora, vamos contruir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
+   limite. Considere um ordinal \(\beta< \lambda\), um nó \(g \in T_{\beta}\) e
    um conjunto \(X \subseteq \omega - \ran g\) finito. Vamos construir uma
-   função \(f = f(g, X)\) recursivamente da seguinte maneira: fixe uma sequência
-   crescente \(\langle \alpha_n \rangle_{n=0}^{\infty}\) tal que \(\alpha_0  =\beta\)
-   e \(sup\{\alpha_n\,\colon n \in \mathbb{N}\} = \alpha\). Seja
-   \(f_0 = g \in T_{\alpha_0}\) e \(X_0 = X \subseteq \omega - ranf_0\). Tendo
-   definido \(f_n \in T_{\alpha_n}\) e \(X_n = X \subseteq \omega - \ran f_n\)
-   finito, nós primeiro tomamos um conjunto \(X_{n+1} \supset X_n\) finito tal
-   que \(X_{n+1} = X \subseteq \omega - \ran f_n\). Note que este último passo é
-   possível porque o conjunto \(\omega -\ran f_n\) é infinito por (ii).
-   Feito isso, escolhemos \(f_{n+1} \in T_{\alpha_{n+1}}\) tal que \(f_{n+1}
-   \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que possível
-   por (iv). Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon
-   \alpha\to \omega\) e  \(f\) é biunívoca pois cada uma  das funções \(f_n\)
-   também é. Além disso, temos que \(\ran f \cap (\bigcup_{n = 0}^{\infty} X_n)
-   = \varnothing\) e, portanto, \(\omega - \ran f\) é infinito e \(\ran f \cap X =
+   função \(f = f(g, X)\) da seguinte maneira: fixe uma sequência
+   crescente \(\langle \lambda_n \rangle_{n=0}^{\infty}\) tal que \(\lambda_0  =\beta\)
+   e \(sup\{\lambda_n\,\colon n \in \mathbb{N}\} = \lambda\). Seja
+   \(f_0 = g \in T_{\lambda_0}\) e \(X_0 = X \subseteq \omega - ranf_0\). Tendo
+   definido \(f_n \in T_{\lambda_n}\) e \(X_n\subseteq \omega - \ran f_n\)
+   finito, nós primeiro tomamos um conjunto \(X_{n+1} \supsetneq X_n\) finito tal
+   que \(X_{n+1} \subseteq \omega - \ran f_n\) (Note que por (ii) este último passo é
+   possível porque o conjunto \(\omega -\ran f_n\) é infinito).
+   Feito isso, escolhemos \(f_{n+1} \in T_{\lambda_{n+1}}\) tal que \(f_{n+1}
+   \supseteq f_n\) e  \(X_{n+1} \cap ranf_{n+1} = \varnothing\), o que é possível
+   por (iv).
+   
+   Seja \(f = \bigcup_{n = 0}^{\infty}f_n\). Claramente \(f\colon
+   \lambda\to \omega\) e  \(f\) é injetora pois, como visto anteriormente, união de funções injetoras encadeadas também é função injetora. Além disso, temos que \(\ran f \cap (\bigcup_{n = 0}^{\infty} X_n)
+   = \varnothing\) pois se \(X\in X_k\) e \(y\in X_k\cap\ran f_n,\) então seja \(m=\max\{k,n\}\), e temos que \(y\in X_m\cap\ran f_m=\varnothing\) (\(f_n\) e \(X_n\) estão encadeados). Portanto \(\omega\setminus\ran f\) é infinito e \(\ran f \cap X =
    \varnothing\). Assim concluímos que \(f\) satisfaz (ii). Ademais, se  \(\beta <
-   \alpha\), temos que  \(\rest{f} {\beta}= \rest{(f_{n})}{\beta}\) sempre que
-   \(\beta < \alpha_n\), e portanto (iii) também é satisfeito.
-
-   \textcolor{red}{Sobre o parágrafo de baixo: OI?}
-    Colocamos esta $f = f(g, X)$ em $T_{\alpha}$ para cada $g \in \bigcup_{\beta < \alpha} T_{\beta}$ e cada $X \subseteq \omega - rang$. Portanto $(4)$ também é satisfeito. Como $|\bigcup_{\beta<\alpha}T_{\beta}| \le \sum_{\beta<\alpha}|T_{\beta}| \le \aleph_0$ (pela suposição indutiva $(1)$) e o número de subconjuntos finitos de $\omega$ é contável, o conjunto $T_{\alpha}$ é no máximo contável, e $(1)$ também é satisfeito.
-
-    Finalmente, vamos mostrar que \(T = \bigcup_{\alpha < \omega_1}T_{\alpha}\)
-    é uma árvore de Aronszajn.
-    \textcolor{red}{Sobre o parágrafo de baixo: OI?}
-      Claramente \(T\) é uma árvore por (iii) , cada nível é no máximo contável por \((i)\), e sua altura é \(\omega_1\) (por $(4)$, cada $T_{\alpha} \neq \emptyset$). Se $B$ fosse um ramo de comprimento $\omega_1$ em $T$, então $F = \bigcup B$ seria uma função um-pra-um de $\omega_1$ para $\omega$ (por $(2)$), uma contradição.
+   \lambda\), tome \(n\) tal que \(\beta < \lambda_n\), e teremos \(\rest{f} {\beta}= \rest{(f_{n})}{\beta}\in T_\beta\) e portanto (iii) também é satisfeito (Perceba que \(f_n\in T_{\lambda_n}\) e \(\lambda_n<\lambda\)).
+   
+   Definimos \(T_\lambda\doteq\big\{f(g,X) : g\in\bigcup_{\beta < \lambda} T_{\beta}\text{ e cada } X \subseteq \omega\setminus\ran g\big\}\). Portanto (4) também é satisfeito por construção. Falta verificar (i). Com efeito, \(\card{T_\lambda}\leq\card{\bigcup_{\beta<\lambda}T_{\beta}}\card{\mathcal P^f(\omega)} \le \card{\omega}\sum_{\beta<\lambda}|T_{\beta}| \le \aleph_0^2=\aleph_0\), onde \(\mathcal P^f\) indica o conjunto das partes finitas.
+   
+   Temos assim \(T\) árvore de Aronszajn de altura \(\omega_1\).
 
 \end{proof}
 
