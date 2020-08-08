@@ -367,9 +367,10 @@ definições que apresentamos:
     calcular \(c_{n+1}\) a partir de \(c_n\). De fato, para consturir tal função precisamos
     aplicar o Axioma da Escolha: se \(k\) é uma função escolha para
     \(\mathcal{P}(T)\) e \(S_c\) é o conjunto de todos os sucessores imediatos
-    de \(c\), então definindo \(g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é
-      infinita}\}\big )\) temos que \(c_{n+1} = g(c_n, n)\). Nesse cenário, estamos
-    conforme o Teorema da Recursão que vimos. No próximo exercício veremos que,
+    de \(c\), então definindo \(g(c,n) \coloneqq k\big ( \{b\in S_c\,\colon
+    \{a\in T: b\leq a\} \text{ é infinita}\}\big )\) temos que \(c_{n+1} =
+    g(c_n, n)\). Nesse  cenário, estamos
+    de acordo com o Teorema da Recursão que vimos. No próximo exercício veremos que,
     se \(T\) é uma árvore com `largura finita', então \(T\) possui um ramo
     cofinal não importando sua altura. Nesse sentido, o resultado a seguir é uma
     generalização do Lema de König.
@@ -404,7 +405,37 @@ definições que apresentamos:
   %\item O livro sugere a seguinte dica: Seja  \(U_{\alpha} = \{ x \in T_{\alpha} \vert  \mid \{y \in T \vert x \leq y \}\mid = \kappa\}\). Prove que \(\{\mid U_{\alpha} \mid \mid \alpha \leq \kappa \} \subseteq N \). Mostre que T tem exatamente m ramos de tamanho $\kappa$.
   %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
   \end{proof}
-  
+
+  \begin{proof}[Solução - Mesma prova do Lema de Konig]
+    Vamos utilizar recursão transfinita para  construir uma sequência
+    \(\langle c_n\rangle_{n=0}^{\kappa}\)  de nós de \(T\) tal que,
+  para todo \(n<\kappa\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
+  infinito.
+
+  Em primeiro lugar, definimos \(c_0\) como a raiz de T e notamos que
+  \(\{a \in T\,\colon c_{0} \leq a \}= T\) tem cardinalidade \(\kappa\).
+  Além disso, se \(\alpha\) é um ordinal e construímos \(c_\alpha\), então para definir
+  \(c_{S(\alpha)}\) consideramos o conjunto \(S_n\) dos sucessores
+  imediatos de \(c_n\), então
+  \[
+  \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S_n} \{a\in T\,\colon b\leq a\}.
+  \]
+
+ Daí segue que existe \(b\in S_n\) tal que o conjunto \(\{a\in T\,\colon
+ b\leq a\}\) é infinito, assim podemos utilizar o Axioma da Escolha para
+ tomar \(c_{n+1}\) como tal \(b\).
+
+ Falta definir \(c_\alpha\) no caso em que \(\alpha\) é um ordinal limite: vamos
+ considerar \(c_\alpha=\bigcup_{\beta<\alpha}\).
+
+ Finalmente, observamos que para cada \(\alpha<\omega\), o conjunto
+ \[\{a\in T\,\colon  a\leq c_n \text{ para algum }
+   n<\alpha\}=\bigcup_{n<\alpha}\{a\in T\,\colon a\leq c_n\}\] é
+  um ramo de \(T^{(\alpha)}\) com altura \(\alpha\). Daí,
+  segue por indução que \[\{a\in T\,\colon a\leq c_n \text{ para algum }
+    n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
+  é um ramo de \(T^{(\omega)}=T\).
+  \end{proof}
 
   Os dois últimos resultados nos mostram que para uma árvore \((T,\leq)\) cuja altura é um
   ordinal limite maior ou igual a \(\omega\) com níveis finitos, então \(T\)
@@ -430,8 +461,8 @@ definições que apresentamos:
     \end{teo}
 
 \begin{proof}
-  Vamos primeiro construir uma família \(T_\alpha\), com \(T_0=\{\varnothing\}\) e que para \(\alpha
-  <\omega_1\), temos:
+  Vamos primeiro construir uma família \(T_\alpha\), com \(T_0=\{\varnothing\}\)
+  e que para \(\alpha <\omega_1\), temos:
   \begin{enumerate}[(i)]
     \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
     \item Se \(f \in T_{\alpha}\), então \(f\) é injetora e \(\omega - \ran f\) é infinito;
