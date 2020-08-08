@@ -1,6 +1,5 @@
 \documentclass[a4paper]{article}
 \usepackage{packages}
-\theoremstyle{plain}\newtheorem{teo}{Teorema}[section]
 \title{Introdução à Teoria dos Conjuntos - Prova 2}
 \author{Ariel Serranoni Soares da Silva  - Número USP: 7658024\\
 Pedro Felizatto - Número USP:9794531\\
@@ -111,7 +110,7 @@ definições que apresentamos:
     \(r_2\) são raízes de \(T\). Neste caso,  para todo \(x\in T\) temos que
     \(r_1\leq x\). Em particular temos que \(r_1\leq r_2\).
     Analogamente, obtemos que \(r_2\leq r_1\). Como \(\leq\) é
-    uma ordem, segue que \(r_1=r_2\). Para \(r\in T\) raiz, temos \(h(r)=0\), logo
+    uma ordem, segue que \(r_1=r_2\). Para \(r\in T\) raiz, temos \(h(r)=0\) e portanto
     \(r\in T_0\). Logo, \(T_0\not=\varnothing\).
     
   \item Suponha que existe \(x\in T_\alpha\cap T_\beta\). Neste caso, temos que
@@ -127,21 +126,14 @@ definições que apresentamos:
 
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
-<<<<<<< HEAD
-=======
-    existe \(y\in T_\alpha\), isto é,
-    \(T_\alpha\) é não vazio.
-    \textcolor{red}{<-arrumar!!->}
-    Assumindo o contrário, teremos que
-    \(h(x)>\alpha\geq h(T)\), que é um absurdo. Além disso,
->>>>>>> 7afd88072a885394655f4da76ecaeef58feb2321
-    \(\{ y\in T_\alpha : y<x\}\) é não vazio. Assumindo o contrário, teremos que o ramo $b\doteq\{y\in T^{(h(x))}: y<x\}$ não possui elemento em $T_\alpha$, logo \[S(\alpha)=h(x)=\ell(b)\leq\alpha\] que é um absurdo. 
-    Assim, tome $y\in T_\alpha$ tal que $y<x$ qualquer, temos que ,
-    se  existe \(z\) tal que \(y<z<x\), então
-    \[h(y)=\alpha<h(z)<S(\alpha)=h(x),\] absurdo.
-    Finalmente, suponha que
-    existem \(y_1\)
-    e \(y_2\) distintos satisfazendo \eqref{propsuc}. Neste caso, o conjunto \(S=\{w\in
+    existe \(y\in T_\alpha\) tal que \(y < x\). Assumindo o contrário, teremos
+    que o ramo $b\doteq\{y\in T^{(h(x))}: y<x\}$ não possui elemento em
+    $T_\alpha$. Daí, segue que \[S(\alpha)=h(x)=\ell(b)\leq\alpha,\] que é um absurdo. 
+    Assim, tome $y\in T_\alpha$ tal que $y<x$ qualquer. Se
+    existe \(z\) tal que \(y<z<x\), então obtemos
+    que \[h(y)=\alpha<h(z)<S(\alpha)=h(x),\] 
+    absurdo. Finalmente, suponha que existem \(y_1\) e \(y_2\) distintos satisfazendo
+    \eqref{propsuc}. Neste caso, o conjunto \(S=\{w\in
     T\,\colon w <x\}\) não é bem ordenado pois o subconjunto
     \(\{y_1,y_2\}\not = \varnothing\) de \(S\) não possui um menor elemento.
 
@@ -366,9 +358,9 @@ definições que apresentamos:
     Apesar da prova acima conter um pouco mais de detalhe em relação àquela
     apresentada em \cite{jech}, não fizemos a prova em mais detalhe ainda para
     não tirar o foco da sua ideia principal, que é construir a sequência
-    \(\langle c_n\rangle_{n=0}^\omega\) 'de baixo para cima', garantindo que
-    sempre temos mais 'infinitos elementos' para serem adicionados e em seguida
-    utilizar a sequência resultante para construir um ramo 'de cima para baixo'.
+    \(\langle c_n\rangle_{n=0}^\omega\)  `de baixo para cima', garantindo que
+    sempre temos mais `infinitos elementos' para serem adicionados e em seguida
+    utilizar a sequência resultante para construir um ramo `de cima para baixo'.
 
     Em especial, observe que usamos o Teorema da Recursão sem
     explicitamente especificar uma função \(g\) para
@@ -378,7 +370,7 @@ definições que apresentamos:
     de \(c\), então definindo \(g(c,n) \doteq k\big ( \{b\in S_c: \{a\in T: b\leq a\} \text{ é
       infinita}\}\big )\) temos que \(c_{n+1} = g(c_n, n)\). Nesse cenário, estamos
     conforme o Teorema da Recursão que vimos. No próximo exercício veremos que,
-    se \(T\) é uma árvore com 'largura finita', então \(T\) possui um ramo
+    se \(T\) é uma árvore com `largura finita', então \(T\) possui um ramo
     cofinal não importando sua altura. Nesse sentido, o resultado a seguir é uma
     generalização do Lema de König.
   
@@ -455,7 +447,7 @@ definições que apresentamos:
     Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset T,\) além disso, se \(x\in T\), então mostremos que \(A_x\doteq\{y\in T : y<x\}\) é bem ordenado. Para facilitar a notação, considere \(o\colon T\rightarrow \{\alpha<\omega_1\}\) tal que \(x\in T_{o(x)}\). Seja \(A\subset A_x\), assim defina \(A^*\doteq \{\alpha<\omega_1 : x\in T_\alpha\cap A\}\). Como os ordinais são bem ordenados, existe \(\beta\in A^*\) menor elemento de \(A^*\).
     Logo, se \(m\in T_\beta\cap A\), então para todo \(g\in A\), \(o(g)\geq\beta\), e como \(\rest{f}{o(g)}=g\) e \(\rest{f}{\beta}=m\), \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o menor elemento de \(A\).
     
-    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\), vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e \(X\) qualquer, então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em \(\omega\): \(F\) é função pois se \(\langle x,p\rangle,\langle x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade, \(f_p>f_q\). Assim \(\rest{f_p}{o(f_q)}=f_q\) então \(p=q\). Analogamente \(F\) é injetora. Absurdo.
+    Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\), vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e \(X\) qualquer, então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em \(\omega\): \(F\) é função pois se \(\langle x,p\rangle,\langle x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade, \(f_p>f_q\). Assim \(\rest{(f_p)}{o(f_q)}=f_q\) então \(p=q\). Analogamente \(F\) é injetora. Absurdo.
     
     
     Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda, T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor, \(\lambda=\alpha+1,\) para algum \(\alpha\), definimos
