@@ -451,19 +451,19 @@ definições que apresentamos:
     
     
     Seja \(T_0=\{\varnothing\}\). Assumindo que para todo \(\beta<\lambda, T_\beta\) satisfaz (i)-(iv), Então, se \(\lambda\) for ordinal sucessor, \(\lambda=\alpha+1,\) para algum \(\alpha\), definimos
-    \[T_{\alpha+1}=\{g\cup\{\langle \alpha+1, a\rangle\}\,\colon g\in
+    \[T_{\alpha+1}=\{g\cup\{\langle \alpha, a\rangle\}\,\colon g\in
     T_\alpha \text{ e } a\in \omega -\ran g\}\]
     
     Vamos verificar que \(T_{\alpha+1}\) satisfaz (i)-(iv):
     \begin{enumerate}[(i)]
       \item \(T_{\alpha+1}\subseteq\omega^{\alpha+1}\) por construção, e \(\card{T_{\alpha+1}}\leq\card{T_\alpha}\card{\omega} \le \aleph_0^2=\aleph_0\)
-      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha+1,a\rangle\}\) para alguma \(g\in
+      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha,a\rangle\}\) para alguma \(g\in
     T_\alpha \text{ e } a\in \omega -\ran g\). Sabemos que \(g\) é injetora, assim, basta mostrarmos que \(a\neq g(\beta)\) para todo \(\beta<\alpha\), o que é verdade pela definição de \(a\)
-      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha+1,a\rangle\}\) para alguma \(g\in
+      \item Seja \(f\in T_{\alpha+1}\), então temos \(f=g\cup\{\langle\alpha,a\rangle\}\) para alguma \(g\in
     T_\alpha \text{ e } a\in \omega -\ran g\). Se \(\beta<\alpha+1,\) então \(\rest{f}{\beta}=\rest{g}{\beta}\in T_\beta\) pois \(\beta\leq\alpha\)
       \item Para qualquer \(\beta < \alpha+1\), qualquer \(g \in T_{\beta}\), e
     qualquer \(X \subseteq \omega - \ran g\) finito, existe uma \(f \in
-    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\). Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito). Então teremos que \(f\cup\{\langle\alpha+1,a\rangle\}\in T_{\alpha+1}\) é a função que desejamos
+    T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\). Seja \(a\in\omega\setminus(\ran f\cup X)\) (observe que é possível pois \(X\) é finito e \(\omega\setminus\ran f\) é infinito). Então teremos que \(f\cup\{\langle\alpha,a\rangle\}\in T_{\alpha+1}\) é a função que desejamos
     \end{enumerate}
       
    Agora, vamos contruir \(T_{\lambda}\) no caso em que \(\lambda\) é um ordinal
@@ -517,3 +517,4 @@ definições que apresentamos:
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
+
