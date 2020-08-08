@@ -203,8 +203,14 @@ Suponhamos que $z,z'$ satisfazem as condições. Se algum deles é $x$, digamos 
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
 
-        \item \textcolor{red}{Ariel S: Aqui o item (ii) estava duplicado e está
-            faltando o (iii) !!!}
+        \item \par
+Vamos começar mostrando que $|b \cap T_\alpha| = 1$ ou $0$, $\forall \alpha$. De fato, suponhamos por absurdo que $|b \cap T_\alpha| \geq 2$ para algum $\alpha$. Tome $x,y \in b \cap T_\alpha, x \neq y$. Como $b$ é ordenado, podemos assumir $x < y$. Mas então $\{t \in T: t < x\} \subsetneqq \{t \in T: t < y\}$ e então  $\alpha = h(x) < h(y) = \alpha$, impossível. Logo $|b \cap T_\alpha| = 1$ ou $0$, $\forall \alpha$.
+\par 
+Seja $\alpha < l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha | = 0$.
+\par 
+Não consegui.
+\par 
+Agora seja $\alpha > l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha| = 1$. Logo exsite $u \in T_\alpha$ tal que $u \in b$, pelo exercício $3.2.ii$, segue que $\{t \in T: t < u\} \subset b$, donde $h(u) \leq l(b)$, mas $u \in T_\alpha$ e então $\alpha = h(u) \leq l(b)$, impossível. Assim, como $|b \cap T_\alpha| = 1$ ou $0$ e $|b \cap T_\alpha| \neq 1$, devemos ter $|b \cap T_\alpha| = 0$.
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
