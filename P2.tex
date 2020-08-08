@@ -157,12 +157,13 @@ definições que apresentamos:
     \eqref{propsuc}, então \(h(x)=S(h(y))\). Do contrário, existe \(z\in T\) tal
     que \(h(y)<h(z)<h(x)\), implicando que \(y<z<x\). Absurdo.
 
-  \item Em primeiro lugar, suponha por absurdo que não existe tal elemento
-    \(z\). Seja \(\alpha=h(x)\) e considere a subárvore \(T^{(\alpha)}\) de \(T\).
-    Seja \(b=\{w \in T \,\colon w<x\}\) e recorde que \(b\) é um ramo de
-    \(T^{(\alpha)}\). Note que \(y\in b\) e que \(b\) tem comprimento \(\alpha\). Se
-    não existe \(z\), então \(b\) não é maximal. \textcolor{red}{Ariel S: Quase
-      certeza que esse item não tá certo! Alguém sabe arrumar?}
+  \item \textbf{Existência}:
+\par
+Se $x$ é sucessor imediato de $y$ então basta tomar $z=x$. Caso contrário, pelo ex 3.1.$iv$ existe $w$ com $y < w < z$.
+Sabemos que o conjunto $\{t \in T : t < x\}$ é bem ordenado. O subconjunto $A = \{ t \in T : y < t < x\}$ é não vazio ($w \in A$) e portanto tem um mínimo. Seja $z$ o mínimo de $A$. Afirmamos que $z$ satisfaz as condições. De fato, claramente $y < z < x$ pois $z \in A$. Além disso, se $z$ não fosse sucessor imediato de $y$, existiria (ex 3.1.$iv$) $w'$ com $y< w'<z<x$, mas então $w' \in A$. Impossível, pois $z$ é o mínimo de $A$.\\
+\textbf{Unicidade}:
+\par
+Suponhamos que $z,z'$ satisfazem as condições. Se algum deles é $x$, digamos $z$, então se $z' \neq z = x$, vale $y < z' < x= z$, mas nesse caso $z$ não é sucessor imediato de $y$. Logo se algum deles é $x$, os dois devem ser. Suponhamos portanto, que $z \neq x, z' \neq x$. Como $z,z'$ satisfazem $y < z, z' < x$, devemos ter $z,z' \in \{t \in T:t <x\}$, logo se $z \neq z'$, deve valer $z < z'$ ou $z' < z$ (pois o conjunto é ordenado). Por absurdo, suponhamos $z \neq z'$ e sem perda de generalidade, digamos $z < z'$. Mas então $y < z < z'$ e $z'$ não é sucessor imediato de $y$ (ex 3.1.$iv$), contradizendo que $z,z'$ satisfazem as condições.
 
   \item  Por definição, \(h(T)\) é o menor ordinal
     \(\alpha\) tal que \(T_\alpha=\varnothing\). Sendo assim, podemos ver que
