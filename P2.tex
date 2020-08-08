@@ -543,15 +543,18 @@ Agora seja $\alpha > l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha| = 1$.
   para um cardinal singular \(\kappa\) qualquer.
 \end{exercicio}
 \begin{proof}[Solução]
-\textcolor{green}{Ariel S. : VER LINK:https://math.stackexchange.com/a/1686329/253958}
+ Primeiramente daremos a ideia da demonstração: Fixado \(\kappa\), queremos encontrar uma árvore de altura \(\kappa\), cujos ramos têm comprimento estritamento menor que \(\kappa\) mas que \(\sup \{\ell(b), b\text{ ramo de }T\}=\kappa\). Faremos isso da seguinte maneira: Como \(\kappa\) é singular, então existe \(\{\alpha_\eta:\eta<\lambda\}\) onde \(\lambda<\kappa\) com \(\sup\{\alpha_\eta\}=\kappa\). Assim basta construir uma árvore formada por ramos ``disjuntos''  (cuja única intersecção é a raiz) com altura \(\alpha_\eta\) para todo \(\eta<\lambda\). Agora construiremos tal árvore.
+ 
+ Seja \(\kappa\) ordinal singular, e \(\lambda=cf(\kappa)<\kappa\). Então existe \(\{\alpha_\eta, \eta<\lambda\}\) subconjunto cofinal de \(\kappa\). Vamos considerar o seguinte conjunto: \[T\doteq\big\{f\colon\beta\rightarrow\kappa\text{ | }\beta<\kappa\text{ e }\eta_f=f(0)<\lambda\text{ e }\dom(f)<\alpha_{\eta_f}\text{ e }f(\eta)=0 \text{ para }\eta\neq 0\big\}\cup\big\{\varnothing\big\}\]
+ Observe que \(T\) é ordenado pela ordem usual de funções e que para \(\varnothing\neq f,g\in T, f\leq g\iff f(0)=g(0), \dom f\subseteq\dom g\). Vamos provar que \(T\) é uma árvore:  \(\{\varnothing\}\) é o menor elemento de \(T\). Seja \(A_x=\{y\in T: y<x\}\) e observe que \(A_x\) possui o mesmo tipo de ordem de \(\dom x\), que é bem ordenado. Assim \(T\) é uma árvore. 
+ 
+ Seus ramos são da forma \(b_\eta=\{f\in T: f(0)=\eta\}\) para algum \(\eta<\lambda\): Se \(b_\eta=\{f\in T: f(0)=\eta\}\) para algum \(\eta<\lambda\), sejam \(f,g\in b_\eta\), então \(f(0)=g(0)\) e sem perda de generalidade temos \(\dom f\subseteq\dom g\), logo \(f\leq g\). \(b_\eta\) é maximal pois suponhamos \(b_\eta\subsetneq c\) com \(c\) cadeia, então existe \(f\in c\) com \(f(0)\neq\eta\), logo \(f\) não é comparável com qualquer elemento de \(b_\eta\). Agora se \(b\) é ramo qualquer de \(T\), vamos provar que \(b\subset b_\xi\) para algum \(\xi<\eta\): De fato tome \(f\in b\) e \(\xi\doteq \eta_f=f(0)\), então se \(g\in b\), ou \(g\leq f\) ou \(g\geq f\) pois \(b\) é uma cadeia. De toda forma, \(g(0)=f(0)=\xi\implies g\in b_\xi\). Como \(b\) é maximal e \(b\subset b_\xi\) então \(b=b_\xi\) pois \(b_\xi\) é ramo (maximal). 
+ 
+ Obrserve que construímos \(T\) para que \(b_\eta=\{f\in T: f(0)=\eta\}\) tenha tipo de ordem \(\ell(b_\eta)=\alpha_\eta<\kappa\). Além disso \(h(T)=\sup\{\alpha_\eta:\eta<\lambda\}=\kappa\) e portanto \(T\) é árvore de Aronszajn de cardinalidade \(\kappa\) cardinal singular.
+ 
 \end{proof}
 
- Por fim, notamos que que cardinais
- fortemente inacessíveis com a propriedade da árvore são precisamente os
- cardinais fracamente compactos definidos na seção anterior.
- \textcolor{red}{Seria bom elaborar um pouquinho nisso aqui também, acontece
-   que não tenho a menor condição. Alguém leu a Seção 2?}
-
+Assim encerra-se o capítulo 3 sobre árvores.
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
