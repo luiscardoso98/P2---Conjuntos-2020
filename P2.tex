@@ -218,17 +218,18 @@ as propriedades dadas no enunciado, então o conjunto
 2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha\) tais que \(x \neq
 y\). Como \(b\) é uma cadeia, temos que \(x<y\) ou \(y<x\). Assumindo sem perda
 de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
-\{t \in T: t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
-Seja \(\alpha < \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 0\).
+\{t \in T\,\colon t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
 
-Não consegui.
+\textcolor{red}{Seja \(\alpha < \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 0\).
 
-Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha = 1\).
+Não consegui.}
+
+Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 1\).
 Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
 3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
-l(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
-Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not =
-1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
+\ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
+Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
+=1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
@@ -431,37 +432,6 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not =
   %Contudo essa dica não necessariamente é verdade, pois o $\mid U_{\alpha} \mid$ é limitado. Considere uma árvore de altura $\omega$ binária, cada ponto de um nível gera dois ramos. Mas a dica falha para maiores alturas, por exemplo, pode-se criar uma arvore de altura etaomega que começa com um ramo, se divide em dois ramos no nivel eta1, então se divide em dois ramos no nivel eta2, e assim por diante. É claro que $\mid U_{\alpha}}$ é ilimitado, mesmo que todos os niveis sejam finitos. Um contra-exemplo similar também funciona quando a altura $\kappa$ tem cofinalidade %\omega%.
   \end{proof}
 
-  \begin{proof}[Solução - Mesma prova do Lema de Konig]
-    Vamos utilizar recursão transfinita para  construir uma sequência
-    \(\langle c_n\rangle_{n=0}^{\kappa}\)  de nós de \(T\) tal que,
-  para todo \(n<\kappa\), o conjunto \(\{a\in T\,\colon c_n\leq a\}\) é
-  infinito.
-
-  Em primeiro lugar, definimos \(c_0\) como a raiz de T e notamos que
-  \(\{a \in T\,\colon c_{0} \leq a \}= T\) tem cardinalidade \(\kappa\).
-  Além disso, se \(\alpha\) é um ordinal e construímos \(c_\alpha\), então para definir
-  \(c_{S(\alpha)}\) consideramos o conjunto \(S_n\) dos sucessores
-  imediatos de \(c_n\), então
-  \[
-  \{a\in T\,\colon c_n\leq a\} = \{c_n\} \cup\bigcup_{b\in S_n} \{a\in T\,\colon b\leq a\}.
-  \]
-
- Daí segue que existe \(b\in S_n\) tal que o conjunto \(\{a\in T\,\colon
- b\leq a\}\) é infinito, assim podemos utilizar o Axioma da Escolha para
- tomar \(c_{n+1}\) como tal \(b\).
-
- Falta definir \(c_\alpha\) no caso em que \(\alpha\) é um ordinal limite: vamos
- considerar \(c_\alpha=\bigcup_{\beta<\alpha}\).
-
- Finalmente, observamos que para cada \(\alpha<\omega\), o conjunto
- \[\{a\in T\,\colon  a\leq c_n \text{ para algum }
-   n<\alpha\}=\bigcup_{n<\alpha}\{a\in T\,\colon a\leq c_n\}\] é
-  um ramo de \(T^{(\alpha)}\) com altura \(\alpha\). Daí,
-  segue por indução que \[\{a\in T\,\colon a\leq c_n \text{ para algum }
-    n\in\Naturals\}=\bigcup_{n <\omega}\{a\in T\,\colon a\leq c_n\}\]
-  é um ramo de \(T^{(\omega)}=T\).
-  \end{proof}
-
   Os dois últimos resultados nos mostram que para uma árvore \((T,\leq)\) cuja altura é um
   ordinal limite maior ou igual a \(\omega\) com níveis finitos, então \(T\)
   possui um ramo cofinal. A partir deste ponto, podemos pensar em generalizações
@@ -486,8 +456,8 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not =
     \end{teo}
 
 \begin{proof}
-  Vamos primeiro construir uma família \(T_\alpha\), com \(T_0=\{\varnothing\}\)
-  e que para \(\alpha <\omega_1\), temos:
+  Vamos construir uma árvore \(T\) de Aronszajn construindo, para cada
+  \(\alpha<\omega_1\), o nível \(T_\alpha\). Queremos que cada nível satisfaça:
   \begin{enumerate}[(i)]
     \item \(T_{\alpha} \subseteq \omega^{\alpha}\) e \(\card{T_{\alpha}} \le \aleph_0\);
     \item Se \(f \in T_{\alpha}\), então \(f\) é injetora e \(\omega - \ran f\) é infinito;
@@ -497,11 +467,25 @@ Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not =
     T_{\alpha}\) tal que \(g \subseteq f\) de \(\ran f \cap X = \varnothing\).
     \end{enumerate}
 
-    Em primeiro lugar, observe que uma vez demonstrada a existência de uma tal família,
-    se \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), mostraremos que \(T\) é a árvore de Aronszajn que desejamos. De fato, \((T,<)\) é um conjunto ordenado com a contenção de funções usual.
+    Em primeiro lugar, observe que uma vez demonstrada a existência de uma tal
+    família se \(T=\bigcup_{\alpha<\omega_1} T_\alpha\), mostraremos que \(T\) é
+    a árvore  de Aronszajn que desejamos. De fato, \((T,<)\) é um conjunto
+    ordenado de acordo a contenção de funções usual.
     
-    Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset T,\) além disso, se \(x\in T\), então mostremos que \(A_x\doteq\{y\in T : y<x\}\) é bem ordenado. Para facilitar a notação, considere \(o\colon T\rightarrow \{\alpha<\omega_1\}\) tal que \(x\in T_{o(x)}\). Seja \(A\subset A_x\), assim defina \(A^*\doteq \{\alpha<\omega_1 : x\in T_\alpha\cap A\}\). Como os ordinais são bem ordenados, existe \(\beta\in A^*\) menor elemento de \(A^*\).
-    Logo, se \(m\in T_\beta\cap A\), então para todo \(g\in A\), \(o(g)\geq\beta\), e como \(\rest{f}{o(g)}=g\) e \(\rest{f}{\beta}=m\), \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o menor elemento de \(A\).
+    Mostremos que \(T\) possui menor elemento. Se \(f\in T\), então
+    \(\rest{f}{0}=\varnothing\) e temos que \(f\geq\varnothing\in T_0\subset
+    T,\) além disso,  se \(x\in T\), então mostremos que \(A_x\coloneqq\{y\in
+    T\,\colon y<x\}\) é bem ordenado. Para facilitar a notação, considere
+    \(o\colon T\rightarrow \{\alpha<\omega_1\}\) tal que \(x\in T_{o(x)}\). Seja
+    \(A\subset A_x\), assim defina \(A^\ast\coloneqq \{\alpha<\omega_1\,\colon
+    x\in T_\alpha\cap A\}\). 
+    Como os ordinais são bem ordenados, existe \(\beta\in A^\ast\) menor
+    elemento de \(A^\ast\).
+    Logo, se \(m\in T_\beta\cap A\), então para todo \(g\in A\) temos
+    \(o(g)\geq\beta\),  e como \(\rest{f}{o(g)}=g\) e \(\rest{f}{\beta}=m\),
+    \(\rest{g}{\beta}=\rest{f}{\beta}=m\). Portanto \(g\geq m\) e \(m\) é o
+    menor elemento
+    de \(A\).
     
     Para verificar que \(T\) é uma árvore de Aronszajn de altura \(\omega_1\), vejamos que, por (i), os níveis são enumeráveis. Por (iv), para todo \(\alpha<\omega_1, T_\alpha\neq\varnothing\), basta tomar \(\beta=0\) e \(X\) qualquer, então \(h(T)=\omega_1\). Precisamos verificar que \(T\) não possui ramo de comprimento \(\omega_1\). De fato, se \(b\) fosse ramo com \(\ell(b)=\omega_1\), se \(F=\bigcup_{f\in b} f\), então mostraremos \(F\) é função injetora de \(\dom F=\bigcup_{\alpha<\omega_1}\alpha=\omega_1\) em \(\omega\): \(F\) é função pois se \(\langle x,p\rangle,\langle x,q\rangle\in F,  \langle x,p\rangle\in f_p\in b\) e \(\langle x,q\rangle\in f_q\in b\). Como \(b\) é uma cadeia, temos que, sem perda de generalidade, \(f_p>f_q\). Assim \(\rest{(f_p)}{o(f_q)}=f_q\) então \(p=q\). Analogamente \(F\) é injetora. Absurdo.
     
