@@ -14,7 +14,7 @@ Ariel Campêlo Viana Morais - Número USP: 9302177}
 
 As notas de aula a seguir foram produzidas com base na Seção 3 do Capítulo 12 de
 \cite{jech}. A ideia do nosso trabalho é seguir fielmente o conteúdo abordado no
-livro, inclusive mantendo a notação e numeração que são usados pelo autor.
+livro, incluqsive mantendo a notação e numeração que são usados pelo autor.
 Além disso, vamos incluir observações, soluções para os exercícios, e justificar
 passos que ficaram em segundo plano no tratamento feito na obra mencionada.
 
@@ -127,9 +127,9 @@ definições que apresentamos:
   \item Suponha que \(x\) é um nó sucessor. Neste caso, temos por definição
     que \(h(x)=S(\alpha)\) para algum ordinal \(\alpha\). Vamos mostrar que
     existe \(y\in T_\alpha\) tal que \(y < x\). Assumindo o contrário, teremos
-    que o ramo $b\doteq\{y\in T^{(h(x))}: y<x\}$ não possui elemento em
-    $T_\alpha$. Daí, segue que \[S(\alpha)=h(x)=\ell(b)\leq\alpha,\] que é um absurdo. 
-    Assim, tome $y\in T_\alpha$ tal que $y<x$ qualquer. Se
+    que o ramo \(b\coloneqq\{y\in T^{(h(x))}\,\colon y<x\}\) não possui elemento em
+    \(T_\alpha\). Daí, segue que \[S(\alpha)=h(x)=\ell(b)\leq\alpha,\] que é um absurdo. 
+    Assim, tome \(y\in T_\alpha\) tal que \(y<x\) qualquer. Se
     existe \(z\) tal que \(y<z<x\), então obtemos
     que \[h(y)=\alpha<h(z)<S(\alpha)=h(x),\] 
     absurdo. Finalmente, suponha que existem \(y_1\) e \(y_2\) distintos satisfazendo
@@ -141,13 +141,23 @@ definições que apresentamos:
     \eqref{propsuc}, então \(h(x)=S(h(y))\). Do contrário, existe \(z\in T\) tal
     que \(h(y)<h(z)<h(x)\), implicando que \(y<z<x\). Absurdo.
 
-  \item \textbf{Existência}:
-\par
-Se $x$ é sucessor imediato de $y$ então basta tomar $z=x$. Caso contrário, pelo ex 3.1.$iv$ existe $w$ com $y < w < z$.
-Sabemos que o conjunto $\{t \in T : t < x\}$ é bem ordenado. O subconjunto $A = \{ t \in T : y < t < x\}$ é não vazio ($w \in A$) e portanto tem um mínimo. Seja $z$ o mínimo de $A$. Afirmamos que $z$ satisfaz as condições. De fato, claramente $y < z < x$ pois $z \in A$. Além disso, se $z$ não fosse sucessor imediato de $y$, existiria (ex 3.1.$iv$) $w'$ com $y< w'<z<x$, mas então $w' \in A$. Impossível, pois $z$ é o mínimo de $A$.\\
-\textbf{Unicidade}:
-\par
-Suponhamos que $z,z'$ satisfazem as condições. Se algum deles é $x$, digamos $z$, então se $z' \neq z = x$, vale $y < z' < x= z$, mas nesse caso $z$ não é sucessor imediato de $y$. Logo se algum deles é $x$, os dois devem ser. Suponhamos portanto, que $z \neq x, z' \neq x$. Como $z,z'$ satisfazem $y < z, z' < x$, devemos ter $z,z' \in \{t \in T:t <x\}$, logo se $z \neq z'$, deve valer $z < z'$ ou $z' < z$ (pois o conjunto é ordenado). Por absurdo, suponhamos $z \neq z'$ e sem perda de generalidade, digamos $z < z'$. Mas então $y < z < z'$ e $z'$ não é sucessor imediato de $y$ (ex 3.1.$iv$), contradizendo que $z,z'$ satisfazem as condições.
+  \item 
+Vamos primeiro mostrar a existência de tal elemento \(z\): se \(x\) é sucessor
+imediato de \(y\) então basta tomar \(z=x\). Caso contrário,
+existe \(w\) com \(y < w < x\). Sabendo que o conjunto \(\{t \in T\,\colon t
+<x\}\) é bem ordenado, concluímos que \(A = \{ t \in T
+\,\colon y < t < x\}\), que é não vazio pois \(w\in A\), tem um menor elemento. Seja
+\(z\) o mínimo de \(A\). Afirmamos que \(z\) é sucessor imediato de \(y\).
+De fato, temos que \(y < z < x\) pois \(z \in A\). Além disso, se \(z\) não
+fosse sucessor imediato de \(y\), existiria \(w^\prime\) com
+\(y< w^\prime<z<x\), implicando que \(w^\prime\in A\). Absurdo, pois \(z\) é o mínimo de \(A\).
+
+
+Para a unicidade de \(z\), basta notar que se existem \(z_1,z_2\) satisfazendo
+as propriedades dadas no enunciado, então o conjunto
+\(\{z_1,z_2\}\) não tem um menor elemento uma vez que \(h(z_1)=h(z_2)\). Como
+\(\varnothing\not=\{z_1,z_2\}\) está contido em \(\{t \in T\,\colon t
+<x\}\), que é bem ordenado, temos um absurdo.
 
   \item  Por definição, \(h(T)\) é o menor ordinal
     \(\alpha\) tal que \(T_\alpha=\varnothing\). Sendo assim, podemos ver que
@@ -203,14 +213,22 @@ Suponhamos que $z,z'$ satisfazem as condições. Se algum deles é $x$, digamos 
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
 
-        \item \par
-Vamos começar mostrando que $|b \cap T_\alpha| = 1$ ou $0$, $\forall \alpha$. De fato, suponhamos por absurdo que $|b \cap T_\alpha| \geq 2$ para algum $\alpha$. Tome $x,y \in b \cap T_\alpha, x \neq y$. Como $b$ é ordenado, podemos assumir $x < y$. Mas então $\{t \in T: t < x\} \subsetneqq \{t \in T: t < y\}$ e então  $\alpha = h(x) < h(y) = \alpha$, impossível. Logo $|b \cap T_\alpha| = 1$ ou $0$, $\forall \alpha$.
-\par 
-Seja $\alpha < l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha | = 0$.
-\par 
+        \item Vamos começar mostrando que \(\card{b \cap T_\alpha} \leq 1\), para cada
+\(\alpha\) ordinal. De fato, suponhamos por absurdo que \(\card{b \cap T_\alpha} \geq
+2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha\) tais que \(x \neq
+y\). Como \(b\) é uma cadeia, temos que \(x<y\) ou \(y<x\). Assumindo sem perda
+de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
+\{t \in T: t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
+Seja \(\alpha < \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 0\).
+
 Não consegui.
-\par 
-Agora seja $\alpha > l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha| = 1$. Logo exsite $u \in T_\alpha$ tal que $u \in b$, pelo exercício $3.2.ii$, segue que $\{t \in T: t < u\} \subset b$, donde $h(u) \leq l(b)$, mas $u \in T_\alpha$ e então $\alpha = h(u) \leq l(b)$, impossível. Assim, como $|b \cap T_\alpha| = 1$ ou $0$ e $|b \cap T_\alpha| \neq 1$, devemos ter $|b \cap T_\alpha| = 0$.
+
+Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha = 1\).
+Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
+3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
+l(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
+Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not =
+1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
@@ -554,7 +572,7 @@ Agora seja $\alpha > l(b)$ e suponhamos por absurdo que $|b \cap T_\alpha| = 1$.
  
 \end{proof}
 
-Assim encerra-se o capítulo 3 sobre árvores.
+Assim encerra-se a Seção 3 sobre árvores.
   \bibliographystyle{plain}
   \bibliography{sample}
 \end{document}
