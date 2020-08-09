@@ -213,22 +213,15 @@ as propriedades dadas no enunciado, então o conjunto
         concluímos que \(b\cup\{y\}\) é uma cadeia e portanto \(b\) não é
         maximal. Absurdo.
 
-        \item Vamos começar mostrando que \(\card{b \cap T_\alpha} \leq 1\), para cada
-\(\alpha\) ordinal. De fato, suponhamos por absurdo que \(\card{b \cap T_\alpha} \geq
-2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha\) tais que \(x \neq
-y\). Como \(b\) é uma cadeia, temos que \(x<y\) ou \(y<x\). Assumindo sem perda
-de generalidade que \(x < y\), segue que \(\{t \in T\,\colon t < x\} \subsetneq
-\{t \in T\,\colon t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), absurdo.
-
-\textcolor{red}{Seja \(\alpha < \ell(b)\) e suponhamos por absurdo que \(\card{b
-    \cap T_\alpha} = 0\). Não consegui.}
-
-Agora seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(\card{b \cap T_\alpha} = 1\).
-Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo item (ii) do Exercício
-3.2, segue que \(\{t \in T\,\colon t < u\} \subset b\), donde \(h(u) \leq
-\ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq l(b)\), impossível.
-Assim, como \(\card{b \cap T_\alpha}\leq 1\) e \(\card{b \cap T_\alpha} \not
-=1\), devemos ter \(\card{b \cap T_\alpha} = 0\).
+        \item
+Vamos começar mostrando que \(|b \cap T_\alpha| = 1\) ou \(0\), \(\forall \alpha\). De fato, suponhamos por absurdo que \(|b \cap T_\alpha| \geq 2\) para algum \(\alpha\). Tome \(x,y \in b \cap T_\alpha, x \neq y\). Como \(b\) é ordenado, podemos assumir \(x < y\). Mas então \(\{t \in T: t < x\} \subsetneq \{t \in T: t < y\}\) e então  \(\alpha = h(x) < h(y) = \alpha\), impossível. Logo \(|b \cap T_\alpha| = 1\) ou \(0\), \(\forall \alpha\).
+\par 
+Seja \(\alpha > \ell(b)\) e suponhamos por absurdo que \(|b \cap T_\alpha| = 1\). Logo exsite \(u \in T_\alpha\) tal que \(u \in b\), pelo exercício \(3.2.ii\), segue que \(\{t \in T: t < u\} \subset b\), donde \(h(u) \leq \ell(b)\), mas \(u \in T_\alpha\) e então \(\alpha = h(u) \leq \ell(b)\), impossível. Assim, como \(|b \cap T_\alpha| = 1\) ou \(0\) e \(|b \cap T_\alpha| \neq 1\), devemos ter \(|b \cap T_\alpha| = 0\).
+\par 
+O caso \(\alpha<l(b)\) faremos por indução. Claramente quando \(\alpha = 0\) é verdade. Seja \(\alpha < \ell(b)\) fixado e \(|b \cap T_\beta| = 1\), para \(\beta < \alpha\). \\
+\textbf{Caso \(\alpha\) é ordinal sucessor:}
+Digamos \(\alpha = \gamma+1\) e portanto, \(|b \cap T_\gamma| = 1\). Tome \(y \in b \cap T_\gamma\), de modo que \(\{t \in T:t \leq y\} \subset b\). Mas \(\ell(b) > \alpha > \gamma\), donde existe \(x \in b, x > y\). Pelo exercício 3.1.v, existe um único \(z \in T\) tal que \(y < z \leq x\) e \(z\) é sucessor imediato de \(y\). Pela maximidade de \(b\), segue que \(z \in b\). Além disso, \(h(z) = h(y) + 1 = \gamma + 1 = \alpha\), donde \(z \in b \cap T_\alpha\). Segue que \(|b \cap T_\alpha| = 1\).\\
+\textcolor{red}{Falta o quando \(\alpha\) é ordinal limite.}
         
       \item Como observamos anteriormente, temos que  \(\ell (b)\leq h(T)\) para
         todo ramo \(b\) de \(T\). Este fato nos permite concluir que
